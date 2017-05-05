@@ -4,32 +4,43 @@
     <link rel="stylesheet" href="/static/style.css">
   </head>
   <body>
-    <div class="container">  
-      <form id="contact" action="" method="post">
-        <h3>Quick Contact</h3>
-        <h4>Contact us today, and get reply with in 24 hours!</h4>
-        <fieldset>
-          <input placeholder="Your name" type="text" tabindex="1" required autofocus>
-        </fieldset>
-        <fieldset>
-          <input placeholder="Your Email Address" type="email" tabindex="2" required>
-        </fieldset>
-        <fieldset>
-          <input placeholder="Your Phone Number" type="tel" tabindex="3" required>
-        </fieldset>
-        <fieldset>
-          <input placeholder="Your Web Site starts with http://" type="url" tabindex="4" required>
-        </fieldset>
-        <fieldset>
-          <textarea placeholder="Type your Message Here...." tabindex="5" required></textarea>
-        </fieldset>
-        <fieldset>
-          <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
-        </fieldset>
+  
+    <div class="container">
+      <form>
+        <ul class="flex-outer">
+          <li>
+            <label for="date">Date</label>
+            <input type='date' id="date"/>
+          <li>
+            <label for="one">One</label>
+            <textarea rows="6" id="one" placeholder=""></textarea>
+          </li>
+          <li>
+            <label for="two">Two</label>
+            <textarea rows="6" id="two" placeholder=""></textarea>
+          </li>
+          <li>
+            <label for="three">Three</label>
+            <textarea rows="6" id="three" placeholder=""></textarea>
+          </li>
+          <li>
+            <label for="four">Four</label>
+            <textarea rows="6" id="four" placeholder=""></textarea>
+          </li>
+          <li>
+            <label for="five">Five</label>
+            <textarea rows="6" id="five" placeholder=""></textarea>
+          </li>
+
+          <li>
+            <button type="submit">Submit</button>
+          </li>
+        </ul>
       </form>
     </div>
 
-    <script src="some.js" type="/src/newEntry.js"></script>
+
+    <script src="/src/newEntry.js"></script>
   </body>
 
 </html>
