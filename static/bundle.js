@@ -663,14 +663,9 @@ module.exports = firebase.storage;
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{"./app":1}],7:[function(require,module,exports){
 var firebase = require("firebase");
-
-document.getElementById('date').valueAsDate = new Date();
-
-document.getElementById('submitButton').onclick = formatData();
-
 console.log("helloooooo");
 
-  // Initialize Firebase
+// Initialize Firebase
 var config = {
     apiKey: "AIzaSyC7amfR9cLvP0zph_Dghfqt3XUzbZTn9IU",
     authDomain: "fivethings-20a79.firebaseapp.com",
@@ -681,7 +676,50 @@ var config = {
   };
 firebase.initializeApp(config);
 
+
+document.getElementById('date').valueAsDate = new Date();
+document.getElementById('date').addEventListener("change", pullInData);
+
+console.log("helloooooo");
+
+
+document.getElementById('submitButton').addEventListener("click", formatData);
+
+
 var database = firebase.database();
+
+function pullInData() {
+  firebase.database().ref().on("value", function(snapshot) {
+   console.log(snapshot.val());
+  }, function (error) {
+   console.log("Error: " + error.code);
+  });
+
+
+  var date = document.getElementById('date').value;
+  var userId = "username1"; //firebase.auth().currentUser.uid;
+  firebase.database().ref('/users/' + userId + "/" + date).once('value').then(function(snapshot) {
+    if (snapshot.val() == null) {
+      resetFields();
+    } else {
+      var things = snapshot.val().things;
+      document.getElementById('one').value = things.one;
+      document.getElementById('two').value = things.two;
+      document.getElementById('three').value = things.three;
+      document.getElementById('four').value = things.four;
+      document.getElementById('five').value = things.five;
+    }
+  });
+}
+
+function resetFields() {
+  document.getElementById('one').value = "";
+  document.getElementById('two').value = "";
+  document.getElementById('three').value = "";
+  document.getElementById('four').value = "";
+  document.getElementById('five').value = "";
+}
+
 
 function formatData() {
   var date = document.getElementById('date').value;
@@ -691,16 +729,14 @@ function formatData() {
     three: document.getElementById('three').value,
     four: document.getElementById('four').value,
     five: document.getElementById('five').value
+    //TODO test for empty boxes, make all fields required?
   }
-
-  writeUserData("userID", date, things);
+  writeUserData("username1", date, things);
 }
-
 
 function writeUserData(userId, date, things) {
 	//save overwrites the current data at the location
-  firebase.database().ref('users/' + userId).set({
-    date: date,
+  firebase.database().ref('users/' + userId + "/" + date).set({
     things: things
   });
 }
