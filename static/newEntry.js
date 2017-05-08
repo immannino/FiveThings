@@ -65,5 +65,6 @@ function writeUserData(userId, date, things) {
   firebase.database().ref('users/' + userId + "/" + date).set({
     things: things
   });
+  //TODO make it so it stays on current date instead of refreshing
 }
 

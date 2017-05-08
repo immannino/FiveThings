@@ -663,7 +663,6 @@ module.exports = firebase.storage;
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{"./app":1}],7:[function(require,module,exports){
 var firebase = require("firebase");
-console.log("helloooooo");
 
 // Initialize Firebase
 var config = {
@@ -675,27 +674,18 @@ var config = {
     messagingSenderId: "882067772741"
   };
 firebase.initializeApp(config);
+var database = firebase.database();
 
-
+//set up initial state
 document.getElementById('date').valueAsDate = new Date();
+pullInData();
+
+//set up event listeners
 document.getElementById('date').addEventListener("change", pullInData);
-
-console.log("helloooooo");
-
-
 document.getElementById('submitButton').addEventListener("click", formatData);
 
 
-var database = firebase.database();
-
 function pullInData() {
-  firebase.database().ref().on("value", function(snapshot) {
-   console.log(snapshot.val());
-  }, function (error) {
-   console.log("Error: " + error.code);
-  });
-
-
   var date = document.getElementById('date').value;
   var userId = "username1"; //firebase.auth().currentUser.uid;
   firebase.database().ref('/users/' + userId + "/" + date).once('value').then(function(snapshot) {
@@ -729,7 +719,7 @@ function formatData() {
     three: document.getElementById('three').value,
     four: document.getElementById('four').value,
     five: document.getElementById('five').value
-    //TODO test for empty boxes, make all fields required?
+    //TODO make all fields required?
   }
   writeUserData("username1", date, things);
 }
