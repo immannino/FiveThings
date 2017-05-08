@@ -11,10 +11,31 @@ var config = {
   };
 firebase.initializeApp(config);
 var database = firebase.database();
+var provider = new firebase.auth.GoogleAuthProvider();
+
+var username;
 
 //set up initial state
 document.getElementById('date').valueAsDate = new Date();
-pullInData();
+
+//set up auth state
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    // User is signed in.
+    document.getElementById('logInOut').innerHTML = 'Sign Out';
+    document.getElementById('logInOut').addEventListener("click", signOut);
+    username = user.uid;
+    pullInData();
+  } else {
+    // No user is signed in.
+    document.getElementById('logInOut').innerHTML = 'Sign In';
+    document.getElementById('logInOut').addEventListener("click", signIn);
+    username = "NOOOOOO";
+    pullInData();
+  }
+});
+
+
 
 //set up event listeners
 document.getElementById('date').addEventListener("change", pullInData);
@@ -23,8 +44,11 @@ document.getElementById('submitButton').addEventListener("click", formatData);
 
 function pullInData() {
   var date = document.getElementById('date').value;
-  var userId = "username1"; //firebase.auth().currentUser.uid;
-  firebase.database().ref('/users/' + userId + "/" + date).once('value').then(function(snapshot) {
+  var user = firebase.auth().currentUser;
+  if (user == null) {
+    console.log("whaaaaa");
+  }
+  firebase.database().ref('/users/' + username + "/" + date).once('value').then(function(snapshot) {
     if (snapshot.val() == null) {
       resetFields();
     } else {
@@ -57,14 +81,25 @@ function formatData() {
     five: document.getElementById('five').value
     //TODO make all fields required?
   }
-  writeUserData("username1", date, things);
+  writeUserData(date, things);
 }
 
-function writeUserData(userId, date, things) {
+function writeUserData(date, things) {
 	//save overwrites the current data at the location
-  firebase.database().ref('users/' + userId + "/" + date).set({
+  firebase.database().ref('users/' + username + "/" + date).set({
     things: things
   });
   //TODO make it so it stays on current date instead of refreshing
 }
 
+function signIn() {
+  firebase.auth().signInWithRedirect(provider);
+}
+
+function signOut() {
+  firebase.auth().signOut().then(function() {
+  // Sign-out successful.
+  }).catch(function(error) {
+    // An error happened.
+  });
+}
