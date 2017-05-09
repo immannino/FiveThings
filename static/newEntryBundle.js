@@ -682,20 +682,21 @@ var username;
 //set up initial state
 document.getElementById('date').valueAsDate = new Date();
 
+document.getElementById('logInButton').addEventListener("click", signIn);
+document.getElementById('logOutButton').addEventListener("click", signOut);
+
+
 //set up auth state
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
-    document.getElementById('logInOut').innerHTML = 'Sign Out';
-    document.getElementById('logInOut').addEventListener("click", signOut);
+    document.getElementById("overlay").style.width = "0%";
     username = user.uid;
     pullInData();
   } else {
-    // No user is signed in.
-    document.getElementById('logInOut').innerHTML = 'Sign In';
-    document.getElementById('logInOut').addEventListener("click", signIn);
-    username = "NOOOOOO";
-    pullInData();
+    // No user is signed in, show overlay and clear fields
+    document.getElementById("overlay").style.width = "100%";
+    resetFields();
   }
 });
 
