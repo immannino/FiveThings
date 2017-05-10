@@ -2,7 +2,7 @@ body {
   font: normal 18px/1.5 "Fira Sans", "Helvetica Neue", sans-serif;
   background: #3AAFAB;
   color: #fff;
-  padding: 50px 0;
+  padding: 15px 0;
 }
 
 .container {
@@ -71,7 +71,7 @@ body {
   border: none;
 }
 
-.flex-outer li button {
+button {
   margin-left: auto;
   padding: 8px 16px;
   border: none;
@@ -99,4 +99,24 @@ body {
     background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
     overflow-x: hidden; /* Disable horizontal scroll */
     transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+.logo {
+    font-weight: 300;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    width: 280;
+    font-size: 40px;
+}
+
+.overlay button {
+      margin: 0 auto;
+      display: block;
+      background: #3AAFAB;
+}
+
+.overlay .logo {
+      margin-top: 200px;
 }
