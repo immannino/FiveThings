@@ -682,6 +682,9 @@ var username;
 //set up initial state
 document.getElementById('date').valueAsDate = new Date();
 
+//set up event listeners
+document.getElementById('date').addEventListener("change", pullInData);
+document.getElementById('saveButton').addEventListener("click", formatData);
 document.getElementById('logInButton').addEventListener("click", signIn);
 document.getElementById('logOutButton').addEventListener("click", signOut);
 
@@ -700,29 +703,26 @@ firebase.auth().onAuthStateChanged(function(user) {
   }
 });
 
-
-
-//set up event listeners
-document.getElementById('date').addEventListener("change", pullInData);
-document.getElementById('submitButton').addEventListener("click", formatData);
-
-
 function pullInData() {
-  var date = document.getElementById('date').value;
+  console.log('pulling in data');
+  var date = formatDate(document.getElementById('date').value);
   var user = firebase.auth().currentUser;
   if (user == null) {
     console.log("whaaaaa");
   }
+  console.log(date);
   firebase.database().ref('/users/' + username + "/" + date).once('value').then(function(snapshot) {
     if (snapshot.val() == null) {
+      console.log('reseting fields');
       resetFields();
     } else {
-      var things = snapshot.val().things;
-      document.getElementById('one').value = things.one;
-      document.getElementById('two').value = things.two;
-      document.getElementById('three').value = things.three;
-      document.getElementById('four').value = things.four;
-      document.getElementById('five').value = things.five;
+      var things = snapshot.val();
+      console.log(things);
+      document.getElementById('one').value = things[0];
+      document.getElementById('two').value = things[1];
+      document.getElementById('three').value = things[2];
+      document.getElementById('four').value = things[3];
+      document.getElementById('five').value = things[4];
     }
   });
 }
@@ -735,24 +735,36 @@ function resetFields() {
   document.getElementById('five').value = "";
 }
 
+//convert date to MM-DD-YY
+function formatDate(date) {
+    //turn string to date object
+    var b = date.split(/\D/);
+    var date = new Date(b[0], --b[1], b[2]);
+
+    var dateString = ("0" + (date.getMonth() + 1).toString()).substr(-2) + "-" + ("0" + date.getDate().toString()).substr(-2)  + "-" + (date.getFullYear().toString()).substr(2);
+
+    return dateString;
+}
+
 
 function formatData() {
-  var date = document.getElementById('date').value;
+  var date = formatDate(document.getElementById('date').value);
   var things = {
-    one: document.getElementById('one').value,
-    two: document.getElementById('two').value,
-    three: document.getElementById('three').value,
-    four: document.getElementById('four').value,
-    five: document.getElementById('five').value
+    0: document.getElementById('one').value,
+    1: document.getElementById('two').value,
+    2: document.getElementById('three').value,
+    3: document.getElementById('four').value,
+    4: document.getElementById('five').value
     //TODO make all fields required?
   }
   writeUserData(date, things);
 }
 
 function writeUserData(date, things) {
+  console.log('writing to db');
 	//save overwrites the current data at the location
   firebase.database().ref('users/' + username + "/" + date).set({
-    things: things
+    0: things
   });
   //TODO make it so it stays on current date instead of refreshing
 }
