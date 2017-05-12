@@ -49,11 +49,9 @@ function pullInData() {
   console.log(date);
   firebase.database().ref('/users/' + username + "/" + date).once('value').then(function(snapshot) {
     if (snapshot.val() == null) {
-      console.log('reseting fields');
       resetFields();
     } else {
       var things = snapshot.val();
-      console.log(things);
       document.getElementById('one').value = things[0];
       document.getElementById('two').value = things[1];
       document.getElementById('three').value = things[2];
@@ -84,6 +82,7 @@ function formatDate(date) {
 
 
 function formatData() {
+  console.log("formatting data")
   var date = formatDate(document.getElementById('date').value);
   var things = {
     0: document.getElementById('one').value,
@@ -91,18 +90,21 @@ function formatData() {
     2: document.getElementById('three').value,
     3: document.getElementById('four').value,
     4: document.getElementById('five').value
-    //TODO make all fields required?
   }
   writeUserData(date, things);
 }
 
 function writeUserData(date, things) {
   console.log('writing to db');
+  console.log(things);
 	//save overwrites the current data at the location
   firebase.database().ref('users/' + username + "/" + date).set({
-    0: things
+    0: things[0],
+    1: things[1],
+    2: things[2],
+    3: things[3],
+    4: things[4]
   });
-  //TODO make it so it stays on current date instead of refreshing
 }
 
 function signIn() {
