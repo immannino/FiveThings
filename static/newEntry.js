@@ -16,7 +16,9 @@ var provider = new firebase.auth.GoogleAuthProvider();
 var username;
 
 //set up initial state
-document.getElementById('date').valueAsDate = new Date();
+var today = new Date();
+document.getElementById("date").value = today.toISOString().substr(0, 10);
+
 
 //set up event listeners
 document.getElementById('date').addEventListener("change", pullInData);

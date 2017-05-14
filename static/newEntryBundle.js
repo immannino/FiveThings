@@ -680,7 +680,9 @@ var provider = new firebase.auth.GoogleAuthProvider();
 var username;
 
 //set up initial state
-document.getElementById('date').valueAsDate = new Date();
+var today = new Date();
+document.getElementById("date").value = today.toISOString().substr(0, 10);
+
 
 //set up event listeners
 document.getElementById('date').addEventListener("change", pullInData);
@@ -754,7 +756,6 @@ function formatData() {
     2: document.getElementById('three').value,
     3: document.getElementById('four').value,
     4: document.getElementById('five').value
-    //TODO make all fields required?
   }
   writeUserData(date, things);
 }
