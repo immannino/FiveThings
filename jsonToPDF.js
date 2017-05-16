@@ -47,10 +47,7 @@ function buildPage(date, things) {
 
     var formattedDate = formatDate(date);
 
-    doc.cell({ paddingBottom: 0.5*pdf.cm }).text(formattedDate, { 
-        fontSize: 60, 
-        textAlign: 'center',
-        font: new pdf.Font(fs.readFileSync('./questa.otf')), });
+    doc.cell({ paddingBottom: 3 }).text(formattedDate, { fontSize: 60, textAlign: 'center' });
 
     doc.cell({ paddingBottom: 8 }).text(things[0], { fontSize: 14, textAlign: 'justified' });
     doc.cell({ paddingBottom: 8 }).text(things[1], { fontSize: 14, textAlign: 'justified' });
