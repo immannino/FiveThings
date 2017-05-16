@@ -3,7 +3,8 @@ var fs = require('fs');
 
 
 const doc = new pdf.Document({
-  font: new pdf.Font(require('pdfjs/font/helvetica.json')),
+  //font: new pdf.Font(require('pdfjs/font/helvetica.json')),
+  font: new pdf.Font(fs.readFileSync('./questa.otf')), 
   padding: 54,
   height: 540,
   weight: 540
@@ -18,14 +19,14 @@ var dates = {
         "Picked up a quick pterrys and went home to eat that and hang with the family for a while before packing up all my crap", 
         "Played banagrams and chicken foot bingo with the family and then had tearful goodbyes with the family and headed off to bed"
     ], 
-    "01/02/17": [
+    "02/02/17": [
         "Woke up bright and early and got squished my suitcase and headed to the airport for a sad goodbye with dad", 
         "Sat around in the airport feeling pretty rubbish and got on the world hottest plane where i had to rub ice cubes against my body to stop from overheating", 
         "Took a taxi home and then headed out to eltana for a welcome home bagel and then to qfc to restock for a few days", 
         "Unpacked a little and then worked on making a flip clock android app for my new kindle", 
         "Cleaned up nada's mess and then watched the season premiere of the bachelor and also wall-e before going to bed nice and early"
     ], 
-    "01/03/17": [
+    "03/03/17": [
         "Woke up early and decided that i was feeling too crappy to go into work and went back to bed", 
         "Messed around on the internet for a while did research on investing and finance", 
         "Finally felt like eating and had grilled cheese and watched before the flood", 
@@ -43,18 +44,37 @@ for (var date in dates) {
 }
 
 function buildPage(date, things) {
-    doc.cell({ paddingBottom: 0.5*pdf.cm }).text(date, { 
+
+    var formattedDate = formatDate(date);
+
+    doc.cell({ paddingBottom: 0.5*pdf.cm }).text(formattedDate, { 
         fontSize: 60, 
         textAlign: 'center',
-        font: new pdf.Font(fs.readFileSync('./kapital.otf')), });
+        font: new pdf.Font(fs.readFileSync('./questa.otf')), });
 
-    doc.cell().text("1. " + things[0], { fontSize: 11, textAlign: 'center' });
-    doc.cell().text("2. " + things[1], { fontSize: 11, textAlign: 'center' });
-    doc.cell().text("3. " + things[2], { fontSize: 11, textAlign: 'center' });
-    doc.cell().text("4. " + things[3], { fontSize: 11, textAlign: 'center' });
-    doc.cell().text("5. " + things[4], { fontSize: 11, textAlign: 'center' });
+    doc.cell({ paddingBottom: 8 }).text(things[0], { fontSize: 14, textAlign: 'justified' });
+    doc.cell({ paddingBottom: 8 }).text(things[1], { fontSize: 14, textAlign: 'justified' });
+    doc.cell({ paddingBottom: 8 }).text(things[2], { fontSize: 14, textAlign: 'justified' });
+    doc.cell({ paddingBottom: 8 }).text(things[3], { fontSize: 14, textAlign: 'justified' });
+    doc.cell().text(things[4], { fontSize: 14, textAlign: 'justified' });
 
     doc.pageBreak()
+}
+
+//converts date from MM-DD-YY to month day, year
+function formatDate(date) {
+    var month = date.substring(0, 2);
+    var day = date.substring(3, 5);
+    var year = date.substring(6, 8);
+
+    var monthNames = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"];
+
+    var monthString = monthNames[parseInt(month)-1];
+    var dayString = parseInt(day);
+    var yearString = "20" + year;
+
+    return monthString + " " + dayString + ", " + yearString;
 }
 
 (async ()=>{
