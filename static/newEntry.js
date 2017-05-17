@@ -71,15 +71,12 @@ function resetFields() {
   document.getElementById('five').value = "";
 }
 
-//convert date to MM-DD-YY
+//convert date to YY-MM-DD
 function formatDate(date) {
-    //turn string to date object
-    var b = date.split(/\D/);
-    var date = new Date(b[0], --b[1], b[2]);
-
-    var dateString = ("0" + (date.getMonth() + 1).toString()).substr(-2) + "-" + ("0" + date.getDate().toString()).substr(-2)  + "-" + (date.getFullYear().toString()).substr(2);
-
-    return dateString;
+    console.log("unformatted date: " + date);
+  
+    var dateString = date + "";
+    return  dateString.substring(2);
 }
 
 
