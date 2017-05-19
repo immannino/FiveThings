@@ -760,7 +760,7 @@ function formatData() {
 function writeUserData(date, things) {
   console.log('writing to db');
   console.log(things);
-	//save overwrites the current data at the location
+  //save overwrites the current data at the location
   firebase.database().ref('users/' + username + "/" + date).set({
     0: things[0],
     1: things[1],
