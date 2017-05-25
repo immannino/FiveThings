@@ -1,4 +1,5 @@
-# coding=utf-8
+# A script to read specially formatted text and convert it to json. 
+# Written to convert my text files to json to add to my firebase DB.
 
 import re
 import json

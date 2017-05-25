@@ -689,6 +689,11 @@ document.getElementById('date').addEventListener("change", pullInData);
 document.getElementById('saveButton').addEventListener("click", formatData);
 document.getElementById('logInButton').addEventListener("click", signIn);
 document.getElementById('logOutButton').addEventListener("click", signOut);
+document.getElementById('one').addEventListener("keyup", stateHasChanged);
+document.getElementById('two').addEventListener("keyup", stateHasChanged);
+document.getElementById('three').addEventListener("keyup", stateHasChanged);
+document.getElementById('four').addEventListener("keyup", stateHasChanged);
+document.getElementById('five').addEventListener("keyup", stateHasChanged);
 
 
 //set up auth state
@@ -725,6 +730,7 @@ function pullInData() {
       document.getElementById('five').value = things[4];
     }
   });
+  stateHasChanged();
 }
 
 function resetFields() {
@@ -758,8 +764,7 @@ function formatData() {
 }
 
 function writeUserData(date, things) {
-  console.log('writing to db');
-  console.log(things);
+
   //save overwrites the current data at the location
   firebase.database().ref('users/' + username + "/" + date).set({
     0: things[0],
@@ -767,7 +772,15 @@ function writeUserData(date, things) {
     2: things[2],
     3: things[3],
     4: things[4]
-  });
+  }).then(function () {
+      document.getElementById('saveButton').innerHTML = 'Saved';
+    });;
+  //TODO update button to say saved if successful
+}
+
+//called when five things have been edited before last save
+function stateHasChanged() {
+  document.getElementById('saveButton').innerHTML = 'Save';
 }
 
 function signIn() {
