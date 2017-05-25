@@ -3,11 +3,11 @@ var fs = require('fs');
 
 const doc = new pdf.Document({
   font: new pdf.Font(fs.readFileSync('./pdf/questa.otf')), 
-  padding: 40,
-  height: 540,
-  width: 540 //some how wrong??
+  padding: 30,
+  height: 504,
+  width: 360
 })
-doc.pipe(fs.createWriteStream('output.pdf'))
+doc.pipe(fs.createWriteStream('fiveBySeven.pdf'))
 
 //dates ordered from oldest to newest
 var dates = 
@@ -38,7 +38,7 @@ for (var date in dates) {
 function buildPage(date, things) {
 
     var formattedDate = formatDate(date);
-    doc.cell().text(formattedDate, { fontSize: 54, textAlign: 'center', font: new pdf.Font(fs.readFileSync('./pdf/bebasbook.otf')) });
+    doc.cell().text(formattedDate, { fontSize: 35, textAlign: 'center', font: new pdf.Font(fs.readFileSync('./pdf/bebasbook.otf')) });
 
     var table = doc.table({
         widths: [.75*pdf.cm, null],
@@ -56,8 +56,8 @@ function buildPage(date, things) {
 
 function addRow(number, thing, table) {
   var tr = table.row();
-  tr.cell().text(number + "." , { fontSize: 14, textAlign: 'left' });
-  tr.cell().text(thing, { fontSize: 14, textAlign: 'justified' });
+  tr.cell().text(number + "." , { fontSize: 10, textAlign: 'left' });
+  tr.cell().text(thing, { fontSize: 11, textAlign: 'justified' });
 }
 
 //converts date from YY-MM-DD to month day, year

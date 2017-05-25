@@ -35,3 +35,21 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
+
+# Generated PDFs
+*.pdf
+
+# Font files
+*.otf
+
+# DS store
+*.DS_Store
+
+# heroku files
+five--things/
+
+#vscode 
+.vscode/
+
+#my personal data
+myData.js
