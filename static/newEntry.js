@@ -17,7 +17,10 @@ var username;
 
 //set up initial state
 var today = new Date();
-document.getElementById("date").value = today.toISOString().substr(0, 10);
+// need to construct our own datestr because today.toISOString() returns date in UTC timezone.
+var month = today.getMonth() + 1; // months are zero-indexed for some reason
+var dateStr = today.getFullYear() + "-" + month + "-" + today.getDate();
+document.getElementById("date").value = new Date(dateStr).toISOString().substr(0, 10);
 
 
 //set up event listeners
