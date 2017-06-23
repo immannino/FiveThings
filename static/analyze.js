@@ -1,5 +1,8 @@
 var firebase = require("firebase");
-var sentiment = require('sentiment');
+var heatMap = require("calendar-heatmap-mini");
+var positivity = require('Sentimental').positivity;
+var negativity = require('Sentimental').negativity;
+
 
 // Initialize Firebase
 var config = {
@@ -51,20 +54,53 @@ function pullInData() {
 }
 
 function analyzeDays(days) {
+    var positive = new Array();
+    var negative = new Array();
     for (var day in days) {
         var things = days[day];
-        var score = scoreDay(things);
-        console.log(day + ": " + score);
+        var date = new Date("20" + day);
+        var dataPositive = {date: date, count: scoreDay(things, true)};
+        var dataNegative = {date: date, count: scoreDay(things, false)};
+        positive.push(dataPositive);
+        negative.push(dataNegative);
     }
+    chart(positive, negative);
 }
 
-function scoreDay(things) {
+function scoreDay(things, isPositive) {
     var total = 0;
     for (var i = 0; i < things.length; i++) {
-        var rating = sentiment(things[i]).score;
-        //console.log(rating);
+        var rating = (isPositive ? positivity(things[i]).score : negativity(things[i]).score);
         total += rating;
     }
     var average = total/things.length;
     return average;
 }
+
+function chart(positive, negative) {
+
+    const chart1 = heatMap()
+                .data(positive)
+                .selector('#positive')
+                .colorRange(['#D8E6E7', '#76dd27'])
+                .tooltipEnabled(true)
+                .onClick(function (data) {
+                    console.log('onClick callback. Data:', data);
+                });
+
+    // render the chart
+    chart1();
+
+    const chart2 = heatMap()
+                .data(negative)
+                .selector('#negative')
+                .colorRange(['#D8E6E7', '#e8482c'])
+                .tooltipEnabled(true)
+                .onClick(function (data) {
+                    console.log('onClick callback. Data:', data);
+                });
+
+    // render the chart
+    chart2();
+}
+
