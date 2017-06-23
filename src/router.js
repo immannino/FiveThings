@@ -7,12 +7,8 @@ router.get('/', function(req, res) {
 	res.sendFile(path.join(__dirname + '/index.html'));
 });
 
-router.get('/create', function(req, res) {
-	res.sendFile(path.join(__dirname + '/createAccount.html'));
-});
-
-router.get('/signin', function(req, res) {
-	res.sendFile(path.join(__dirname + '/login.html'));
+router.get('/analyze', function(req, res) {
+	res.sendFile(path.join(__dirname + '/analyze.html'));
 });
 
 module.exports = router;
