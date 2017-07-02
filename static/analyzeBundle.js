@@ -10698,19 +10698,14 @@ console.log("blerg");
 
 function pullInData() {
   var user = firebase.auth().currentUser;
-  if (user == null) {
-    console.log("whaaaaa");
-    //TODO handle this case where user isn't logged in
+  if (user != null) {
+    firebase.database().ref('/users/' + username).once('value').then(function(snapshot) {
+      if (snapshot.val() != null) {
+        var days = snapshot.val();
+        analyzeDays(days);
+      }
+    });
   }
-  firebase.database().ref('/users/' + username).once('value').then(function(snapshot) {
-    if (snapshot.val() == null) {
-      //user has no data
-    } else {
-      var days = snapshot.val();
-      analyzeDays(days);
-    }
-  });
-
 }
 
 function analyzeDays(days) {
