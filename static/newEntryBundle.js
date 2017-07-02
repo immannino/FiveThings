@@ -692,6 +692,8 @@ document.getElementById('date').addEventListener("change", pullInData);
 document.getElementById('saveButton').addEventListener("click", formatData);
 document.getElementById('logInButton').addEventListener("click", signIn);
 document.getElementById('logOutButton').addEventListener("click", signOut);
+document.getElementById('left').addEventListener("click", getPrevDate);
+document.getElementById('right').addEventListener("click", getNextDate);
 document.getElementById('one').addEventListener("keyup", stateHasChanged);
 document.getElementById('two').addEventListener("keyup", stateHasChanged);
 document.getElementById('three').addEventListener("keyup", stateHasChanged);
@@ -737,6 +739,16 @@ function pullInData() {
       stateHasChanged();
     }
   }
+}
+
+function getPrevDate() {
+  document.getElementById('date').stepDown(1);
+  pullInData();
+}
+
+function getNextDate() {
+  document.getElementById('date').stepUp(1);
+  pullInData();
 }
 
 function disableFields() {
