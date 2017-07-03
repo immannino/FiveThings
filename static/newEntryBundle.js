@@ -692,6 +692,8 @@ document.getElementById('date').addEventListener("change", pullInData);
 document.getElementById('saveButton').addEventListener("click", formatData);
 document.getElementById('logInButton').addEventListener("click", signIn);
 document.getElementById('logOutButton').addEventListener("click", signOut);
+document.getElementById('left').addEventListener("click", getPrevDate);
+document.getElementById('right').addEventListener("click", getNextDate);
 document.getElementById('one').addEventListener("keyup", stateHasChanged);
 document.getElementById('two').addEventListener("keyup", stateHasChanged);
 document.getElementById('three').addEventListener("keyup", stateHasChanged);
@@ -714,26 +716,59 @@ firebase.auth().onAuthStateChanged(function(user) {
 });
 
 function pullInData() {
-  console.log('pulling in data');
   var date = formatDate(document.getElementById('date').value);
-  var user = firebase.auth().currentUser;
-  if (user == null) {
-    console.log("whaaaaa");
-  }
-  console.log(date);
-  firebase.database().ref('/users/' + username + "/" + date).once('value').then(function(snapshot) {
-    if (snapshot.val() == null) {
-      resetFields();
-    } else {
-      var things = snapshot.val();
-      document.getElementById('one').value = things[0];
-      document.getElementById('two').value = things[1];
-      document.getElementById('three').value = things[2];
-      document.getElementById('four').value = things[3];
-      document.getElementById('five').value = things[4];
+
+  if (date == "") {
+    disableFields();
+  } else {
+    enableFields();
+    var user = firebase.auth().currentUser;
+    if (user != null) {
+      firebase.database().ref('/users/' + username + "/" + date).once('value').then(function(snapshot) {
+        if (snapshot.val() == null) {
+          resetFields();
+        } else {
+          var things = snapshot.val();
+          document.getElementById('one').value = things[0];
+          document.getElementById('two').value = things[1];
+          document.getElementById('three').value = things[2];
+          document.getElementById('four').value = things[3];
+          document.getElementById('five').value = things[4];
+        }
+      });
+      stateHasChanged();
     }
-  });
-  stateHasChanged();
+  }
+}
+
+function getPrevDate() {
+  document.getElementById('date').stepDown(1);
+  pullInData();
+}
+
+function getNextDate() {
+  document.getElementById('date').stepUp(1);
+  pullInData();
+}
+
+function disableFields() {
+  resetFields();
+  document.getElementById('one').value = "Impossible date!";
+  document.getElementById('one').disabled = true;
+  document.getElementById('two').disabled = true;
+  document.getElementById('three').disabled = true;
+  document.getElementById('four').disabled = true;
+  document.getElementById('five').disabled = true;
+  document.getElementById('saveButton').disabled = true;
+}
+
+function enableFields() {
+  document.getElementById('one').disabled = false;
+  document.getElementById('two').disabled = false;
+  document.getElementById('three').disabled = false;
+  document.getElementById('four').disabled = false;
+  document.getElementById('five').disabled = false;
+  document.getElementById('saveButton').disabled = false;
 }
 
 function resetFields() {
@@ -745,16 +780,13 @@ function resetFields() {
 }
 
 //convert date to YY-MM-DD
-function formatDate(date) {
-    console.log("unformatted date: " + date);
-  
+function formatDate(date) {  
     var dateString = date + "";
     return  dateString.substring(2);
 }
 
 
 function formatData() {
-  console.log("formatting data")
   var date = formatDate(document.getElementById('date').value);
   var things = {
     0: document.getElementById('one').value,
