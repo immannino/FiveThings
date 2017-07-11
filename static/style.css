@@ -107,8 +107,10 @@ button {
     text-transform: uppercase;
     margin: 0 auto;
     margin-bottom: 10px;
-    width: 280;
     font-size: 40px;
+    background:none;
+    border:none;
+    display: block;
 }
 
 .overlay button {

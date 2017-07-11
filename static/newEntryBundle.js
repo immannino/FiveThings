@@ -679,16 +679,11 @@ var provider = new firebase.auth.GoogleAuthProvider();
 
 var username;
 
-//set up initial state
-var today = new Date();
-// need to construct our own datestr because today.toISOString() returns date in UTC timezone.
-var month = today.getMonth() + 1; // months are zero-indexed for some reason
-var dateStr = today.getFullYear() + "-" + month + "-" + today.getDate();
-document.getElementById("date").value = new Date(dateStr).toISOString().substr(0, 10);
-
+getToday();
 
 //set up event listeners
 document.getElementById('date').addEventListener("change", pullInData);
+document.getElementById('logo').addEventListener("click", getToday);
 document.getElementById('saveButton').addEventListener("click", formatData);
 document.getElementById('logInButton').addEventListener("click", signIn);
 document.getElementById('logOutButton').addEventListener("click", signOut);
@@ -748,6 +743,15 @@ function getPrevDate() {
 
 function getNextDate() {
   document.getElementById('date').stepUp(1);
+  pullInData();
+}
+
+function getToday() {
+  var today = new Date();
+  // need to construct our own datestr because today.toISOString() returns date in UTC timezone.
+  var month = today.getMonth() + 1; // months are zero-indexed for some reason
+  var dateStr = today.getFullYear() + "-" + month + "-" + today.getDate();
+  document.getElementById("date").value = new Date(dateStr).toISOString().substr(0, 10);
   pullInData();
 }
 
