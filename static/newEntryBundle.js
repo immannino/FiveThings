@@ -694,6 +694,16 @@ document.getElementById('two').addEventListener("keyup", stateHasChanged);
 document.getElementById('three').addEventListener("keyup", stateHasChanged);
 document.getElementById('four').addEventListener("keyup", stateHasChanged);
 document.getElementById('five').addEventListener("keyup", stateHasChanged);
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+        case 37:
+            getPrevDate();
+            break;
+        case 39:
+            getNextDate();
+            break;
+    }
+};
 
 
 //set up auth state
