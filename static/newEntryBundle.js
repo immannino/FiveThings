@@ -695,13 +695,15 @@ document.getElementById('three').addEventListener("keyup", stateHasChanged);
 document.getElementById('four').addEventListener("keyup", stateHasChanged);
 document.getElementById('five').addEventListener("keyup", stateHasChanged);
 document.onkeydown = function(e) {
-    switch (e.keyCode) {
-        case 37:
-            getPrevDate();
-            break;
-        case 39:
-            getNextDate();
-            break;
+    if (!isTyping()) {
+      switch (e.keyCode) {
+          case 37:
+              getPrevDate();
+              break;
+          case 39:
+              getNextDate();
+              break;
+      }
     }
 };
 
@@ -830,6 +832,15 @@ function writeUserData(date, things) {
 //called when five things have been edited before last save
 function stateHasChanged() {
   document.getElementById('saveButton').innerHTML = 'Save';
+}
+
+function isTyping() {
+  console.log(document.activeElement);
+  return document.getElementById('one') === document.activeElement ||
+         document.getElementById('two') === document.activeElement ||
+         document.getElementById('three') === document.activeElement ||
+         document.getElementById('four') === document.activeElement ||
+         document.getElementById('five') === document.activeElement;
 }
 
 function signIn() {
