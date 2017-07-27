@@ -176,7 +176,8 @@ function isTyping() {
          document.getElementById('two') === document.activeElement ||
          document.getElementById('three') === document.activeElement ||
          document.getElementById('four') === document.activeElement ||
-         document.getElementById('five') === document.activeElement;
+         document.getElementById('five') === document.activeElement ||
+         document.getElementById('date') === document.activeElement;
 }
 
 function signIn() {
