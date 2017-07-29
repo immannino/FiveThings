@@ -16,6 +16,9 @@ var dates =
     "17/01/02": ["Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea."],
     "17/01/03": ["Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea."],
     "17/01/04": ["Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea."],
+    "17/01/05": ["Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea."],
+    "17/01/06": ["Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea."],
+    "17/01/07": ["Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea."],
 }
 
 
@@ -32,7 +35,7 @@ var leftDay,
     leftThings,
     rightThings,
     table;
-while (i < keys.length-1) {
+while (i < keys.length) {
     table = doc.table({
         widths: [doc.width/2, doc.width/2],
         borderHorizontalWidths: function(i) { return i < 2 ? 1 : 0.1 },
@@ -52,29 +55,13 @@ while (i < keys.length-1) {
 }
 
 
-if (keys.length%2 != 0) {
-    leftDay = keys[i];
-    leftThings = dates[leftDay]
-    addOddPage(leftDay, leftThings);
-}
-//TODO account for odd num of pages
-
-
 function addDateHeaders(leftDate, rightDate) {
     var tr = table.row();
-    var left = tr.cell().text();
-    left.add(getRawDay(leftDate), {fontSize: 35, font: new pdf.Font(require('pdfjs/font/helvetica-bold.json'))})
-        .br()
-        .add(getShortMonth(leftDate), {fontSize: 20, color: 0xa0a0a0})
-        .br()
-        .add(getYear(leftDate), {fontSize: 20, lineHeight: .75});
+    var left = tr.cell().text(getRawDay(leftDate), {textAlign: 'center', fontSize: 35, font: new pdf.Font(require('pdfjs/font/helvetica-bold.json'))});
     if (rightDate != null) {
-        var right = tr.cell().text();
-        right.add(getRawDay(rightDate), {fontSize: 35, font: new pdf.Font(require('pdfjs/font/helvetica-bold.json'))})
-            .br()
-            .add(getShortMonth(rightDate), {fontSize: 20, color: 0xa0a0a0})
-            .br()
-            .add(getYear(rightDate), {fontSize: 20, lineHeight: .75});
+        tr.cell().text(getRawDay(rightDate), {textAlign: 'center', fontSize: 35, font: new pdf.Font(require('pdfjs/font/helvetica-bold.json'))})
+    } else {
+         tr.cell().text("  ");
     }
 }
 
@@ -82,84 +69,83 @@ function addThings(leftDate, rightDate) {
     var tr = table.row();
     var left = tr.cell().text();
     left.add(leftDate[0], {
-                fontSize: 8, 
+                fontSize: 7, 
                 padding: 1.25})
         .br()
         .br()
         .add(leftDate[1], {
-                fontSize: 8, 
+                fontSize: 7, 
                 padding: 1.25})
         .br()
         .br()
         .add(leftDate[2], {
-                fontSize: 8, 
+                fontSize: 7, 
                 padding: 1.25})
         .br()
         .br()
         .add(leftDate[3], {
-                fontSize: 8, 
+                fontSize: 7, 
                 padding: 1.25})
         .br()
         .br()
         .add(leftDate[4], {
-                fontSize: 8, 
+                fontSize: 7, 
                 padding: 1.25});
     var right = tr.cell().text();
-    right.add(rightDate[0], {
-                fontSize: 8, 
-                padding: 1.25})
-        .br()
-        .br()
-        .add(rightDate[1], {
-                fontSize: 8, 
-                padding: 1.25})
-        .br()
-        .br()
-        .add(rightDate[2], {
-                fontSize: 8, 
-                padding: 1.25})
-        .br()
-        .br()
-        .add(rightDate[3], {
-                fontSize: 8, 
-                padding: 1.25})
-        .br()
-        .br()
-        .add(rightDate[4], {
-                fontSize: 8, 
-                padding: 1.25});
+    if (rightDate != null) {
+        right.add(rightDate[0], {
+                    fontSize: 7, 
+                    padding: 1.25})
+            .br()
+            .br()
+            .add(rightDate[1], {
+                    fontSize: 7, 
+                    padding: 1.25})
+            .br()
+            .br()
+            .add(rightDate[2], {
+                    fontSize: 7, 
+                    padding: 1.25})
+            .br()
+            .br()
+            .add(rightDate[3], {
+                    fontSize: 7, 
+                    padding: 1.25})
+            .br()
+            .br()
+            .add(rightDate[4], {
+                    fontSize: 7, 
+                    padding: 1.25});
+    } else {
+        right.add("   ");
+    }
 }
 
 function addOddPage(day, things) {
-    var leftDate = doc.cell().text();
-    leftDate.add(getRawDay(day), {fontSize:40, font: new pdf.Font(require('pdfjs/font/helvetica-bold.json')),lineHeight: 1.15})
-        .br()
-        .add(getShortMonth(day), {fontSize: 20, color: 0xa0a0a0, lineHeight: .35})
-        .br()
-        .add(getYear(day), {fontSize: 20, lineHeight: .75});
+    doc.cell().text(getRawDay(day), {textAlign: 'center', fontSize: 35, font: new pdf.Font(require('pdfjs/font/helvetica-bold.json'))});
     var left = doc.cell({ paddingRight: 143}).text();
     left.add(things[0], {
-                fontSize: 8, 
+                fontSize: 7, 
                 padding: 1.25})
         .br()
         .br()
         .add(things[1], {
-                fontSize: 8, 
+                fontSize: 7, 
                 padding: 1.25})
         .br()
         .br()
         .add(things[2], {
-                fontSize: 8, 
+                fontSize: 7, 
                 padding: 1.25})
         .br()
         .br()
         .add(things[3], {
-                fontSize: 8, 
+                fontSize: 7, 
                 padding: 1.25})
         .br()
         .br()
         .add(things[4], {
-                fontSize: 8, 
+                fontSize: 7, 
                 padding: 1.25});
 }
 
