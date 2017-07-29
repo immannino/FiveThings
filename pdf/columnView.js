@@ -12,11 +12,10 @@ doc.pipe(fs.createWriteStream('columnView.pdf'))
 //dates ordered from oldest to newest
 var dates = 
 {
-    "17/01/01": ["LEFT Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea."],
-    "17/01/02": ["RIGHT Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea."],
-    "17/01/03": ["LEFT Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea."],
-    "17/01/04": ["RIGHT Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea."],
-    "17/01/05": ["LEFT Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea."]
+    "17/01/01": ["Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea."],
+    "17/01/02": ["Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea."],
+    "17/01/03": ["Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea."],
+    "17/01/04": ["Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea.","Lorem ipsum dolor sit amet, vis paulo postulant definitiones ad. Ei meis brute imperdiet sed, eos eu aperiri abhorreant instructior. Eu has eius choro dictas, ex nam cetero iriure invidunt. An ridens pertinacia nam, aliquid omittam ei mea."],
 }
 
 
@@ -64,16 +63,16 @@ if (keys.length%2 != 0) {
 function addDateHeaders(leftDate, rightDate) {
     var tr = table.row();
     var left = tr.cell().text();
-    left.add(getRawDay(leftDate), {fontSize:40, font: new pdf.Font(require('pdfjs/font/helvetica-bold.json')),lineHeight: 1.15})
+    left.add(getRawDay(leftDate), {fontSize: 35, font: new pdf.Font(require('pdfjs/font/helvetica-bold.json'))})
         .br()
-        .add(getShortMonth(leftDate), {fontSize: 20, color: 0xa0a0a0, lineHeight: .35})
+        .add(getShortMonth(leftDate), {fontSize: 20, color: 0xa0a0a0})
         .br()
         .add(getYear(leftDate), {fontSize: 20, lineHeight: .75});
     if (rightDate != null) {
         var right = tr.cell().text();
-        right.add(getRawDay(rightDate), {fontSize:40, font: new pdf.Font(require('pdfjs/font/helvetica-bold.json')),lineHeight: 1.15})
+        right.add(getRawDay(rightDate), {fontSize: 35, font: new pdf.Font(require('pdfjs/font/helvetica-bold.json'))})
             .br()
-            .add(getShortMonth(rightDate), {fontSize: 20, color: 0xa0a0a0, lineHeight: .35})
+            .add(getShortMonth(rightDate), {fontSize: 20, color: 0xa0a0a0})
             .br()
             .add(getYear(rightDate), {fontSize: 20, lineHeight: .75});
     }
@@ -86,17 +85,21 @@ function addThings(leftDate, rightDate) {
                 fontSize: 8, 
                 padding: 1.25})
         .br()
+        .br()
         .add(leftDate[1], {
                 fontSize: 8, 
                 padding: 1.25})
+        .br()
         .br()
         .add(leftDate[2], {
                 fontSize: 8, 
                 padding: 1.25})
         .br()
+        .br()
         .add(leftDate[3], {
                 fontSize: 8, 
                 padding: 1.25})
+        .br()
         .br()
         .add(leftDate[4], {
                 fontSize: 8, 
@@ -106,17 +109,21 @@ function addThings(leftDate, rightDate) {
                 fontSize: 8, 
                 padding: 1.25})
         .br()
+        .br()
         .add(rightDate[1], {
                 fontSize: 8, 
                 padding: 1.25})
+        .br()
         .br()
         .add(rightDate[2], {
                 fontSize: 8, 
                 padding: 1.25})
         .br()
+        .br()
         .add(rightDate[3], {
                 fontSize: 8, 
                 padding: 1.25})
+        .br()
         .br()
         .add(rightDate[4], {
                 fontSize: 8, 
@@ -133,33 +140,27 @@ function addOddPage(day, things) {
     var left = doc.cell({ paddingRight: 143}).text();
     left.add(things[0], {
                 fontSize: 8, 
-                padding: 1.25,
-                borderLeftWidth: 1, 
-                borderLeftColor: 0xa0a0a0})
+                padding: 1.25})
+        .br()
         .br()
         .add(things[1], {
                 fontSize: 8, 
-                padding: 1.25,
-                borderLeftWidth: 1, 
-                borderLeftColor: 0xa0a0a0})
+                padding: 1.25})
+        .br()
         .br()
         .add(things[2], {
                 fontSize: 8, 
-                padding: 1.25,
-                borderLeftWidth: 1, 
-                borderLeftColor: 0xa0a0a0})
+                padding: 1.25})
+        .br()
         .br()
         .add(things[3], {
                 fontSize: 8, 
-                padding: 1.25,
-                borderLeftWidth: 1, 
-                borderLeftColor: 0xa0a0a0})
+                padding: 1.25})
+        .br()
         .br()
         .add(things[4], {
                 fontSize: 8, 
-                padding: 1.25,
-                borderLeftWidth: 1, 
-                borderLeftColor: 0xa0a0a0});
+                padding: 1.25});
 }
 
 
