@@ -31,8 +31,14 @@ var i = 0;
 var leftDay,
     rightDay,
     leftThings,
-    rightThings;
+    rightThings,
+    table;
 while (i < keys.length-1) {
+    table = doc.table({
+        widths: [doc.width/2, doc.width/2],
+        borderHorizontalWidths: function(i) { return i < 2 ? 1 : 0.1 },
+        padding: 5
+    })
     console.log(i);
     leftDay = keys[i];
     rightDay = keys[i+1];
@@ -43,7 +49,10 @@ while (i < keys.length-1) {
     addDateHeaders(leftDay, rightDay);
     addThings(leftThings, rightThings);
     i += 2;
+    doc.pageBreak();
 }
+
+
 if (keys.length%2 != 0) {
     leftDay = keys[i];
     leftThings = dates[leftDay]
@@ -75,63 +84,43 @@ function addThings(leftDate, rightDate) {
     var left = tr.cell().text();
     left.add(leftDate[0], {
                 fontSize: 8, 
-                padding: 1.25,
-                borderLeftWidth: 1, 
-                borderLeftColor: 0xa0a0a0})
+                padding: 1.25})
         .br()
         .add(leftDate[1], {
                 fontSize: 8, 
-                padding: 1.25,
-                borderLeftWidth: 1, 
-                borderLeftColor: 0xa0a0a0})
+                padding: 1.25})
         .br()
         .add(leftDate[2], {
                 fontSize: 8, 
-                padding: 1.25,
-                borderLeftWidth: 1, 
-                borderLeftColor: 0xa0a0a0})
+                padding: 1.25})
         .br()
         .add(leftDate[3], {
                 fontSize: 8, 
-                padding: 1.25,
-                borderLeftWidth: 1, 
-                borderLeftColor: 0xa0a0a0})
+                padding: 1.25})
         .br()
         .add(leftDate[4], {
                 fontSize: 8, 
-                padding: 1.25,
-                borderLeftWidth: 1, 
-                borderLeftColor: 0xa0a0a0});
+                padding: 1.25});
     var right = tr.cell().text();
     right.add(rightDate[0], {
                 fontSize: 8, 
-                padding: 1.25,
-                borderLeftWidth: 1, 
-                borderLeftColor: 0xa0a0a0})
+                padding: 1.25})
         .br()
         .add(rightDate[1], {
                 fontSize: 8, 
-                padding: 1.25,
-                borderLeftWidth: 1, 
-                borderLeftColor: 0xa0a0a0})
+                padding: 1.25})
         .br()
         .add(rightDate[2], {
                 fontSize: 8, 
-                padding: 1.25,
-                borderLeftWidth: 1, 
-                borderLeftColor: 0xa0a0a0})
+                padding: 1.25})
         .br()
         .add(rightDate[3], {
                 fontSize: 8, 
-                padding: 1.25,
-                borderLeftWidth: 1, 
-                borderLeftColor: 0xa0a0a0})
+                padding: 1.25})
         .br()
         .add(rightDate[4], {
                 fontSize: 8, 
-                padding: 1.25,
-                borderLeftWidth: 1, 
-                borderLeftColor: 0xa0a0a0});
+                padding: 1.25});
 }
 
 function addOddPage(day, things) {
