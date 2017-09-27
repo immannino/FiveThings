@@ -39,14 +39,14 @@ jspm_packages
 # Generated PDFs
 *.pdf
 
-# Font files
-*.otf
-
 # DS store
 *.DS_Store
 
 # heroku files
 five--things/
+
+# PDF samples
+pdf/samples
 
 #vscode 
 .vscode/
