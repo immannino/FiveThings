@@ -26,3 +26,9 @@ I also wrote some js code to convert my json to pdfs that printed into physical 
 * Settings Page
 * Lots more templates! 
 * A redesign to the journal entry page
+
+
+
+#### Some new template designs:
+
+<img src="https://github.com/alisonthemonster/FiveThings/blob/master/static/images/YearlyColumnStyle.png" height="250" />    <img src="https://github.com/alisonthemonster/FiveThings/blob/master/static/images/FloralCoverYearly.png" height="250" />
