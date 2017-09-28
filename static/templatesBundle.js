@@ -685,7 +685,7 @@ firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     //User is signed in.
     username = user.uid;
-    getEntriesInRange("18-01-08", "16-04-28");
+    getEntriesInRange("16-04-07", "16-04-28");
   } else {
     console.log("not logged in for realz")
     //No user is signed in, show overlay and clear fields
@@ -701,12 +701,24 @@ function getEntriesInRange(startDate, endDate) {
 
   var user = firebase.auth().currentUser;
     if (user != null) {
+      var json = {}
+
       var ref = firebase.database().ref('/users/' + username);
-      ref.orderByKey().startAt(startDate).endAt(endDate) //TODO what happens when you give a date not in the db
-        .on("child_added", function(snapshot){
-          var day = snapshot.key
-          console.log(day)
-          var things = snapshot.val()
+      ref.orderByKey().startAt(startDate).endAt(endDate)
+        .once("value", function(snapshot){
+          var count = 0;
+          console.log("num children: " + snapshot.numChildren())
+          snapshot.forEach(function(data) {
+            var day = data.key;
+            var things = data.val();
+            json[day] = things
+            count++;
+            if (count>=snapshot.numChildren()) {
+              //all data has been loaded and json is ready
+              //buildPdf()
+              console.log(JSON.stringify(json));
+            }
+          });
         });
     } else {
       console.log("user not logged in!!");
