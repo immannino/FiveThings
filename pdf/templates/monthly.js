@@ -2,7 +2,7 @@ const pdf = require('pdfjs')
 var fs = require('fs');
 
 const doc = new pdf.Document({
-  font: new pdf.Font(fs.readFileSync('./pdf/questa.otf')), 
+  font: new pdf.Font(fs.readFileSync('./pdf/fonts/questa.otf')), 
   padding: 30,
   height: 504,
   width: 360
@@ -32,9 +32,9 @@ for (var date in dates) {
 
 function buildPage(date, things) {
 
-    doc.text(getDayOfWeek(date), {fontSize: 20, font: new pdf.Font(fs.readFileSync('./pdf/bebasbook.otf'))})
-    doc.text(getMonth(date) + " " + getDay(date), {fontSize: 20, font: new pdf.Font(fs.readFileSync('./pdf/bebasbook.otf'))});
-    doc.text(getYear(date), {fontSize: 20, font: new pdf.Font(fs.readFileSync('./pdf/bebasbook.otf'))});
+    doc.text(getDayOfWeek(date), {fontSize: 20, font: new pdf.Font(fs.readFileSync('./pdf/fonts/bebasbook.otf'))})
+    doc.text(getMonth(date) + " " + getDay(date), {fontSize: 20, font: new pdf.Font(fs.readFileSync('./pdf/fonts/bebasbook.otf'))});
+    doc.text(getYear(date), {fontSize: 20, font: new pdf.Font(fs.readFileSync('./pdf/fonts/bebasbook.otf'))});
 
     var table = doc.table({
         widths: [.75*pdf.cm, null],

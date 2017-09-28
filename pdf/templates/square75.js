@@ -2,7 +2,7 @@ const pdf = require('pdfjs')
 var fs = require('fs');
 
 const doc = new pdf.Document({
-  font: new pdf.Font(fs.readFileSync('./pdf/questa.otf')), 
+  font: new pdf.Font(fs.readFileSync('./pdf/fonts/questa.otf')), 
   padding: 40,
   height: 540,
   width: 540 //some how wrong??
@@ -23,7 +23,7 @@ var firstDay = keys[0];
 var lastDay = keys[keys.length -1];
 var range = formatDate(firstDay) + " - " + formatDate(lastDay);
 
-doc.cell().text(range, { fontSize: 24, textAlign: 'center', font: new pdf.Font(fs.readFileSync('./pdf/bebasbook.otf')) });
+doc.cell().text(range, { fontSize: 24, textAlign: 'center', font: new pdf.Font(fs.readFileSync('./pdf/fonts/bebasbook.otf')) });
 
 doc.pageBreak();
 doc.pageBreak();
@@ -38,7 +38,7 @@ for (var date in dates) {
 function buildPage(date, things) {
 
     var formattedDate = formatDate(date);
-    doc.cell().text(formattedDate, { fontSize: 54, textAlign: 'center', font: new pdf.Font(fs.readFileSync('./pdf/bebasbook.otf')) });
+    doc.cell().text(formattedDate, { fontSize: 54, textAlign: 'center', font: new pdf.Font(fs.readFileSync('./pdf/fonts/bebasbook.otf')) });
 
     var table = doc.table({
         widths: [.75*pdf.cm, null],

@@ -2,7 +2,7 @@ const pdf = require('pdfjs')
 var fs = require('fs');
 
 const doc = new pdf.Document({
-  font: new pdf.Font(fs.readFileSync('./pdf/Helvetica-Regular.ttf')),
+  font: new pdf.Font(fs.readFileSync('./pdf/fonts/Helvetica-Regular.ttf')),
   padding: 40,
   height: 7*72,
   width: 5*72
@@ -47,7 +47,7 @@ while (i < keys.length) {
 }
 
 function addHeaders(leftDay, rightDay) {
-    var font = new pdf.Font(fs.readFileSync('./pdf/didonesque.otf'))
+    var font = new pdf.Font(fs.readFileSync('./pdf/fonts/didonesque.otf'))
     var tr = table.row();
     var leftHeader = tr.cell().text({textAlign: 'right', fontSize: 32, lineHeight: .65, font: font})
     leftHeader.add(getRawMonth(leftDay)+"\n"+getRawDay(leftDay)+"\n"+getShortYear(leftDay))
@@ -95,19 +95,19 @@ function addThings(leftThings, rightThings) {
 
 function buildNumbers() {
     var list =  new Array();
-    var src = fs.readFileSync('./pdf/one.jpg');
+    var src = fs.readFileSync('./pdf/assets/one.jpg');
     var imgOne = new pdf.Image(src);
     list.push(imgOne);
-    src = fs.readFileSync('./pdf/two.jpg');
+    src = fs.readFileSync('./pdf/assets/two.jpg');
     var imgTwo = new pdf.Image(src);
     list.push(imgTwo);
-    src = fs.readFileSync('./pdf/three.jpg');
+    src = fs.readFileSync('./pdf/assets/three.jpg');
     var imgThree = new pdf.Image(src);
     list.push(imgThree);
-    src = fs.readFileSync('./pdf/four.jpg');
+    src = fs.readFileSync('./pdf/assets/four.jpg');
     var imgFour = new pdf.Image(src);
     list.push(imgFour);
-    src = fs.readFileSync('./pdf/five.jpg');
+    src = fs.readFileSync('./pdf/assets/five.jpg');
     var imgFive = new pdf.Image(src);
     list.push(imgFive)
     return list;
