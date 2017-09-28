@@ -23,8 +23,6 @@ document.getElementById('logo').addEventListener("click", getToday);
 document.getElementById('saveButton').addEventListener("click", formatData);
 document.getElementById('logInButton').addEventListener("click", signIn);
 document.getElementById('logOutButton').addEventListener("click", signOut);
-document.getElementById('left').addEventListener("click", getPrevDate);
-document.getElementById('right').addEventListener("click", getNextDate);
 document.getElementById('one').addEventListener("keyup", stateHasChanged);
 document.getElementById('two').addEventListener("keyup", stateHasChanged);
 document.getElementById('three').addEventListener("keyup", stateHasChanged);
