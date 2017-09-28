@@ -10,3 +10,18 @@ I also wrote some js code to convert my json to pdfs that printed into physical 
 
 
 ![Five Things Book](http://i.imgur.com/kMMbRY9.gif)
+
+
+#### Todo's & Future Plans
+* A template page where users can  *(In progress!)*
+  * select the book style they like
+  * select a range of days they want printed
+  * generate a PDF of those days in their chosen style
+* Analytics and Analysis
+  * Sentiment analysis to determine if you had a good or bad day *(Done!)*
+  * Graphs to show happiness over time
+  * Fun stats about your month (longest day, shortest day, most referenced person, etc)
+* Navigation Bar
+* Settings Page
+* Lots more templates! 
+* A redesign to the journal entry page
