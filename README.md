@@ -13,12 +13,13 @@ I also wrote some js code to convert my json to pdfs that printed into physical 
 
 
 #### Todo's & Future Plans
-* A template page where users can  *(In progress!)*
+* A template page where users can...  
   * select the book style they like
   * select a range of days they want printed
   * generate a PDF of those days in their chosen style
+  * *(In progress [here](https://five--things.herokuapp.com/templates)!)*
 * Analytics and Analysis
-  * Sentiment analysis to determine if you had a good or bad day *(Done!)*
+  * Sentiment analysis to determine if you had a good or bad day *(In progress [here](https://five--things.herokuapp.com/analyze)!)*
   * Graphs to show happiness over time
   * Fun stats about your month (longest day, shortest day, most referenced person, etc)
 * Navigation Bar
