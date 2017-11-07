@@ -5,8 +5,14 @@ body {
   padding: 15px 0;
 }
 
+textarea {
+  font: "Helvetica Neue";
+  font-weight: 200;
+  font-size: 15;
+}
+
 .container {
-  width: 80%;
+  width: 88%;
   max-width: 1200px;
   margin: 0 auto;
 }
