@@ -158,7 +158,7 @@ button {
 }
 
 #thumb, #thumb2 {
-  width:300px;
+  width:150px;
   height:200px;
   display:inline-block;
   background-color:white;
@@ -168,7 +168,7 @@ button {
 }
 
 #thumb {
-  margin:-40px 20px 20px 20px;
+  margin:20px 20px 20px 20px;
 }
 
 #thumb2{
@@ -191,9 +191,9 @@ button {
   top:-200px;
   display:inline-block;
   background: url("/static/images/Details.png") no-repeat;
-  background-position:115px 130px;
-  width:300px;
-  height:200px;
+  background-position: 40px 130px;
+  width:135px;
+  height:250px;
   opacity:0;
   transition:0.85s;
   -webkit-transition: ease .85s;	 	 
