@@ -715,8 +715,7 @@ function getEntriesInRange(startDate, endDate) {
             count++;
             if (count>=snapshot.numChildren()) {
               //all data has been loaded and json is ready
-              //buildPdf()
-              console.log(JSON.stringify(json));
+              buildPdf(json);
             }
           });
         });
@@ -724,5 +723,10 @@ function getEntriesInRange(startDate, endDate) {
       console.log("user not logged in!!");
       //TODO get user to log in
     }
+}
+
+function buildPdf() {
+  //call cloud function to create pdf
+  //when function is complete grab the pdf from storage
 }
 },{"firebase":4}]},{},[7]);

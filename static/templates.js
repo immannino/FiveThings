@@ -43,7 +43,6 @@ function getEntriesInRange(startDate, endDate) {
       ref.orderByKey().startAt(startDate).endAt(endDate)
         .once("value", function(snapshot){
           var count = 0;
-          console.log("num children: " + snapshot.numChildren())
           snapshot.forEach(function(data) {
             var day = data.key;
             var things = data.val();

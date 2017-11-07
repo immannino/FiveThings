@@ -832,7 +832,6 @@ function stateHasChanged() {
 }
 
 function isTyping() {
-  console.log(document.activeElement);
   return document.getElementById('one') === document.activeElement ||
          document.getElementById('two') === document.activeElement ||
          document.getElementById('three') === document.activeElement ||
