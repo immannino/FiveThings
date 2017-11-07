@@ -19,7 +19,6 @@ getToday();
 
 //set up event listeners
 document.getElementById('date').addEventListener("change", pullInData);
-document.getElementById('logo').addEventListener("click", getToday);
 document.getElementById('saveButton').addEventListener("click", formatData);
 document.getElementById('logInButton').addEventListener("click", signIn);
 document.getElementById('logOutButton').addEventListener("click", signOut);

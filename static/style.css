@@ -1,6 +1,6 @@
 body {
   font: normal 18px/1.5 "Fira Sans", "Helvetica Neue", sans-serif;
-  background: #3AAFAB;
+  background: #333;
   color: #fff;
   padding: 15px 0;
 }
@@ -45,7 +45,7 @@ body {
 .flex-outer li label,
 .flex-outer li p {
   padding: 8px;
-  font-weight: 300;
+  font-weight: 100;
   letter-spacing: .09em;
   text-transform: uppercase;
 }
@@ -75,7 +75,7 @@ button {
   margin-left: auto;
   padding: 8px 16px;
   border: none;
-  background: #333;
+  background: #3AAFAB;
   color: #f2f2f2;
   text-transform: uppercase;
   letter-spacing: .09em;
@@ -102,7 +102,7 @@ button {
 }
 
 .logo {
-    font-weight: 300;
+    font-weight: 100;
     letter-spacing: .09em;
     text-transform: uppercase;
     margin: 0 auto;
@@ -117,6 +117,7 @@ button {
       margin: 0 auto;
       display: block;
       background: #3AAFAB;
+      margin-top: 25;
 }
 
 .overlay .logo {
