@@ -216,7 +216,7 @@ function getDatabaseStyleDate(date)  {
 function getMonth(month) {
   var monthNames = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"];
-  return monthNames[parseInt(month)-1];
+  return monthNames[parseInt(month)];
 }
 
 function ordinal_suffix_of(i) {
