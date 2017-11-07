@@ -1849,19 +1849,14 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 function pullInData() {
   var dateStyled = getDatabaseStyleDate(date)
-  console.log("Pulling in data for: " + dateStyled)
-
 
   var user = firebase.auth().currentUser;
   if (user != null) {
     firebase.database().ref('/users/' + username + "/" + dateStyled).once('value').then(function(snapshot) {
-      console.log("bleeeergg")
       if (snapshot.val() == null) {
         resetFields(); //no things for this day
       } else {
         var things = snapshot.val()
-        console.log(things)
-        console.log("Found!!!!!!!")
         document.getElementById('one').value = things[0]
         document.getElementById('two').value = things[1]
         document.getElementById('three').value = things[2]
@@ -1869,32 +1864,29 @@ function pullInData() {
         document.getElementById('five').value = things[4]
       }
     });
-    console.log("after")
     stateHasChanged();
 
   }
 }
 
 function getPrevDate() {
-  document.getElementById('date').stepDown(1);
-  //TODO date = date - 1
-  pullInData(); //TODO
+  date.setDate(date.getDate() - 1)
+  document.getElementById('date').value = getPrettyDate(date)
+  pullInData(); 
 }
 
 function getNextDate() {
-  document.getElementById('date').stepUp(1);
-  //TODO date = date + 1
-  pullInData(); //TODO
+  date.setDate(date.getDate() + 1)
+  document.getElementById('date').value = getPrettyDate(date)
+  pullInData(); 
 }
 
 function getToday() {
   var today = new Date();
   date = today
-  // need to construct our own datestr because today.toISOString() returns date in UTC timezone.
   var month = today.getMonth() + 1; // months are zero-indexed for some reason
   var dateStr = today.getFullYear() + "-" + month + "-" + today.getDate();
   document.getElementById("date").value = getPrettyDate(today)
-  //document.getElementById("date").value = new Date(dateStr).toISOString().substr(0, 10);
   pullInData(today);
 }
 
