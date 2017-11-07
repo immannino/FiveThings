@@ -14,7 +14,8 @@ firebase.initializeApp(config);
 var database = firebase.database();
 var provider = new firebase.auth.GoogleAuthProvider();
 
-var username;
+var username
+var date
 
 const datePicker = TinyDatePicker('#date', {
           mode: 'dp-below',
@@ -23,8 +24,8 @@ const datePicker = TinyDatePicker('#date', {
           }
 	      });
 datePicker.on('statechange', (_, picker) =>  {
-  var date = picker.state.selectedDate
-  pullInData(picker.state.selectedDate) //TODO update to take in this new date
+  date = picker.state.selectedDate
+  pullInData() 
 });
 
 getToday();
@@ -66,7 +67,7 @@ firebase.auth().onAuthStateChanged(function(user) {
   }
 });
 
-function pullInData(date) {
+function pullInData() {
   var dateStyled = getDatabaseStyleDate(date)
   console.log("Pulling in data for: " + dateStyled)
 
@@ -96,16 +97,19 @@ function pullInData(date) {
 
 function getPrevDate() {
   document.getElementById('date').stepDown(1);
+  //TODO date = date - 1
   pullInData(); //TODO
 }
 
 function getNextDate() {
   document.getElementById('date').stepUp(1);
+  //TODO date = date + 1
   pullInData(); //TODO
 }
 
 function getToday() {
   var today = new Date();
+  date = today
   // need to construct our own datestr because today.toISOString() returns date in UTC timezone.
   var month = today.getMonth() + 1; // months are zero-indexed for some reason
   var dateStr = today.getFullYear() + "-" + month + "-" + today.getDate();
@@ -143,7 +147,6 @@ function resetFields() {
 }
 
 function formatData() {
-  var date = formatDate(document.getElementById('date').value);
   var things = {
     0: document.getElementById('one').value,
     1: document.getElementById('two').value,
@@ -151,12 +154,13 @@ function formatData() {
     3: document.getElementById('four').value,
     4: document.getElementById('five').value
   }
-  writeUserData(date, things);
+
+  writeUserData(things);
 }
 
-function writeUserData(date, things) {
+function writeUserData(things) {
   //save overwrites the current data at the location
-  firebase.database().ref('users/' + username + "/" + date).set({
+  firebase.database().ref('users/' + username + "/" + getDatabaseStyleDate(date)).set({
     0: things[0],
     1: things[1],
     2: things[2],
