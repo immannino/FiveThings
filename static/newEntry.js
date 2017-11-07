@@ -1,4 +1,5 @@
-var firebase = require("firebase");
+var firebase = require("firebase")
+var TinyDatePicker = require('tiny-date-picker')
 
 // Initialize Firebase
 var config = {
@@ -13,12 +14,23 @@ firebase.initializeApp(config);
 var database = firebase.database();
 var provider = new firebase.auth.GoogleAuthProvider();
 
-var username;
+var username
+var date
+
+const datePicker = TinyDatePicker('#date', {
+          mode: 'dp-below',
+          format(date) {
+            return getPrettyDate(date)
+          }
+	      });
+datePicker.on('statechange', (_, picker) =>  {
+  date = picker.state.selectedDate
+  pullInData() 
+});
 
 getToday();
 
 //set up event listeners
-document.getElementById('date').addEventListener("change", pullInData);
 document.getElementById('saveButton').addEventListener("click", formatData);
 document.getElementById('logInButton').addEventListener("click", signIn);
 document.getElementById('logOutButton').addEventListener("click", signOut);
@@ -47,7 +59,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     // User is signed in.
     document.getElementById("overlay").style.width = "0%";
     username = user.uid;
-    pullInData();
+    getToday()
   } else {
     // No user is signed in, show overlay and clear fields
     document.getElementById("overlay").style.width = "100%";
@@ -56,48 +68,46 @@ firebase.auth().onAuthStateChanged(function(user) {
 });
 
 function pullInData() {
-  var date = formatDate(document.getElementById('date').value);
+  var dateStyled = getDatabaseStyleDate(date)
 
-  if (date == "") {
-    disableFields();
-  } else {
-    enableFields();
-    var user = firebase.auth().currentUser;
-    if (user != null) {
-      firebase.database().ref('/users/' + username + "/" + date).once('value').then(function(snapshot) {
-        if (snapshot.val() == null) {
-          resetFields();
-        } else {
-          var things = snapshot.val();
-          document.getElementById('one').value = things[0];
-          document.getElementById('two').value = things[1];
-          document.getElementById('three').value = things[2];
-          document.getElementById('four').value = things[3];
-          document.getElementById('five').value = things[4];
-        }
-      });
-      stateHasChanged();
-    }
+  var user = firebase.auth().currentUser;
+  if (user != null) {
+    firebase.database().ref('/users/' + username + "/" + dateStyled).once('value').then(function(snapshot) {
+      if (snapshot.val() == null) {
+        resetFields(); //no things for this day
+      } else {
+        var things = snapshot.val()
+        document.getElementById('one').value = things[0]
+        document.getElementById('two').value = things[1]
+        document.getElementById('three').value = things[2]
+        document.getElementById('four').value = things[3]
+        document.getElementById('five').value = things[4]
+      }
+    });
+    stateHasChanged();
+
   }
 }
 
 function getPrevDate() {
-  document.getElementById('date').stepDown(1);
-  pullInData();
+  date.setDate(date.getDate() - 1)
+  document.getElementById('date').value = getPrettyDate(date)
+  pullInData(); 
 }
 
 function getNextDate() {
-  document.getElementById('date').stepUp(1);
-  pullInData();
+  date.setDate(date.getDate() + 1)
+  document.getElementById('date').value = getPrettyDate(date)
+  pullInData(); 
 }
 
 function getToday() {
   var today = new Date();
-  // need to construct our own datestr because today.toISOString() returns date in UTC timezone.
+  date = today
   var month = today.getMonth() + 1; // months are zero-indexed for some reason
   var dateStr = today.getFullYear() + "-" + month + "-" + today.getDate();
-  document.getElementById("date").value = new Date(dateStr).toISOString().substr(0, 10);
-  pullInData();
+  document.getElementById("date").value = getPrettyDate(today)
+  pullInData(today);
 }
 
 function disableFields() {
@@ -128,15 +138,7 @@ function resetFields() {
   document.getElementById('five').value = "";
 }
 
-//convert date to YY-MM-DD
-function formatDate(date) {  
-    var dateString = date + "";
-    return  dateString.substring(2);
-}
-
-
 function formatData() {
-  var date = formatDate(document.getElementById('date').value);
   var things = {
     0: document.getElementById('one').value,
     1: document.getElementById('two').value,
@@ -144,13 +146,13 @@ function formatData() {
     3: document.getElementById('four').value,
     4: document.getElementById('five').value
   }
-  writeUserData(date, things);
+
+  writeUserData(things);
 }
 
-function writeUserData(date, things) {
-
+function writeUserData(things) {
   //save overwrites the current data at the location
-  firebase.database().ref('users/' + username + "/" + date).set({
+  firebase.database().ref('users/' + username + "/" + getDatabaseStyleDate(date)).set({
     0: things[0],
     1: things[1],
     2: things[2],
@@ -159,7 +161,6 @@ function writeUserData(date, things) {
   }).then(function () {
       document.getElementById('saveButton').innerHTML = 'Saved';
     });;
-  //TODO update button to say saved if successful
 }
 
 //called when five things have been edited before last save
@@ -186,4 +187,45 @@ function signOut() {
   }).catch(function(error) {
     // An error happened.
   });
+}
+
+function getPrettyDate(date) {
+  var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  var dayOfWeek = days[date.getDay()]
+  var month = getMonth(date.getMonth())
+  var day = ordinal_suffix_of(date.getDate())
+  var year = date.getFullYear()
+  return dayOfWeek + " " + month + " " + day + ", " + year
+}
+
+//takes in a date object and converts to YY-MM-DD
+function getDatabaseStyleDate(date)  {
+  var month = '' + (date.getMonth() + 1),
+      day = '' + date.getDate(),
+      year = date.getFullYear().toString().substr(-2)
+  if (month.length < 2) month = '0' + month;
+  if (day.length < 2) day = '0' + day;
+
+  return [year, month, day].join('-');
+}
+
+function getMonth(month) {
+  var monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"];
+  return monthNames[parseInt(month)];
+}
+
+function ordinal_suffix_of(i) {
+  var j = i % 10,
+      k = i % 100;
+  if (j == 1 && k != 11) {
+      return i + "st";
+  }
+  if (j == 2 && k != 12) {
+      return i + "nd";
+  }
+  if (j == 3 && k != 13) {
+      return i + "rd";
+  }
+  return i + "th";
 }
