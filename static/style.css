@@ -124,27 +124,6 @@ button {
       margin-top: 200px;
 }
 
-#left {
-  left: 0;
-}
-
-#right {
-  right: 0;
-}
-
-.arrow {
-  position: absolute;
-  z-index: 999;
-  display: block;
-  /*padding: 4% 3%;*/
-  padding-top: 2%;
-  width: auto;
-  height: auto;
-  color: #fff;
-  font-size: 24px;
-  cursor: pointer;
-}
-
 .header {
   position: relative;
 }
@@ -154,7 +133,6 @@ button {
   height:auto;
   margin: 0 auto;
   padding:0;
-  padding-top: 40px;
 }
 
 #thumb, #thumb2 {
