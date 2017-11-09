@@ -65,7 +65,7 @@ function buildDatePicker() {
             format(date) {
               return getPrettyDate(date)
             },
-            // max: new Date(),
+            max: new Date(),
             dateClass(day) {
               var dayString = getDatabaseStyleDate(day)
               return writtenDays.includes(dayString+"") ? 'dp-written' : ''
