@@ -11,6 +11,16 @@ textarea {
   font-size: 15;
 }
 
+#date {
+  color: white;
+  background: transparent;
+  font: normal 18px/1.5 "Fira Sans", "Helvetica Neue", sans-serif;  
+  font-weight: 100;
+  padding: unset;
+  padding-top: 30;
+  font-size: 32;
+}
+
 .container {
   width: 80%;
   max-width: 1200px;
@@ -107,18 +117,6 @@ button {
     transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
 }
 
-.logo {
-    font-weight: 100;
-    letter-spacing: .09em;
-    text-transform: uppercase;
-    margin: 0 auto;
-    margin-bottom: 10px;
-    font-size: 40px;
-    background:none;
-    border:none;
-    display: block;
-}
-
 .overlay button {
       margin: 0 auto;
       display: block;
@@ -132,6 +130,7 @@ button {
 
 .header {
   position: relative;
+  text-align:center;
 }
 
 .wrapper{
@@ -302,6 +301,11 @@ button {
     padding:0;
     margin:0 auto;
   } 
+
+  #date {
+    font-size: 22px;
+    padding-top: 5;
+  }
 
   #thumb, #thumb2 {
     background-color:rgba(255, 255, 255, 1);
