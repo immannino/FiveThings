@@ -1848,7 +1848,7 @@ function buildDatePicker() {
             // max: new Date(),
             dateClass(day) {
               var dayString = getDatabaseStyleDate(day)
-              return writtenDays.includes(dayString+"") ? 'dp-written' : 'dp-blank'
+              return writtenDays.includes(dayString+"") ? 'dp-written' : ''
             }
           });
   datePicker.on('select', (_, picker) =>  {

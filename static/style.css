@@ -611,11 +611,7 @@ button {
 }
 
 .dp-written {
-  background: blueviolet
-}
-
-.dp-blank {
-  background: greenyellow
+  background: #e0f5f4
 }
 
 /* Responsive overrides */
