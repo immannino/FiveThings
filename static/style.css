@@ -610,6 +610,14 @@ button {
   left: 50%;
 }
 
+.dp-written {
+  background: blueviolet
+}
+
+.dp-blank {
+  background: greenyellow
+}
+
 /* Responsive overrides */
 @media (max-width: 480px), (max-height: 480px) {
   .dp-modal .dp {

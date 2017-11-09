@@ -1795,20 +1795,8 @@ var database = firebase.database();
 var provider = new firebase.auth.GoogleAuthProvider();
 
 var username
-var date
-
-const datePicker = TinyDatePicker('#date', {
-          mode: 'dp-below',
-          format(date) {
-            return getPrettyDate(date)
-          }
-	      });
-datePicker.on('statechange', (_, picker) =>  {
-  date = picker.state.selectedDate
-  pullInData() 
-});
-
-getToday();
+var writtenDays = []
+var date = new Date()
 
 //set up event listeners
 document.getElementById('saveButton').addEventListener("click", formatData);
@@ -1839,6 +1827,9 @@ firebase.auth().onAuthStateChanged(function(user) {
     // User is signed in.
     document.getElementById("overlay").style.width = "0%";
     username = user.uid;
+
+    updateDatePicker()
+    
     getToday()
   } else {
     // No user is signed in, show overlay and clear fields
@@ -1846,6 +1837,27 @@ firebase.auth().onAuthStateChanged(function(user) {
     resetFields();
   }
 });
+
+
+function buildDatePicker() {
+  const datePicker = TinyDatePicker('#date', {
+            mode: 'dp-below',
+            format(date) {
+              return getPrettyDate(date)
+            },
+            // max: new Date(),
+            dateClass(day) {
+              var dayString = getDatabaseStyleDate(day)
+              return writtenDays.includes(dayString+"") ? 'dp-written' : 'dp-blank'
+            }
+          });
+  datePicker.on('select', (_, picker) =>  {
+    date = picker.state.selectedDate  
+    pullInData() 
+  })
+}
+
+// getToday()
 
 function pullInData() {
   var dateStyled = getDatabaseStyleDate(date)
@@ -1890,6 +1902,22 @@ function getToday() {
   pullInData(today);
 }
 
+//fetches all the dates that a user has data for
+function updateDatePicker() {
+  var days = []
+  var user = firebase.auth().currentUser;
+
+  if (user != null) {
+    firebase.database().ref('/users/' + username).once('value').then(function(snapshot) {
+      if (snapshot.val() != null) {
+        var data = snapshot.val()
+        writtenDays = Object.keys(data)
+        buildDatePicker()
+      }
+    })
+  }
+}
+
 function disableFields() {
   resetFields();
   document.getElementById('one').value = "Impossible date!";
@@ -1930,16 +1958,25 @@ function formatData() {
   writeUserData(things);
 }
 
+function fieldsAreEmpty(things) {
+  if (things[0] == "" &&
+      things[1] == "" &&
+      things[2] == "" &&
+      things[3] == "" &&
+      things[4] == "") {
+    return true
+  }
+  return false
+}
+
 function writeUserData(things) {
+
   //save overwrites the current data at the location
-  firebase.database().ref('users/' + username + "/" + getDatabaseStyleDate(date)).set({
-    0: things[0],
-    1: things[1],
-    2: things[2],
-    3: things[3],
-    4: things[4]
-  }).then(function () {
+  firebase.database().ref('users/' + username + "/" + getDatabaseStyleDate(date)).set(
+    (fieldsAreEmpty(things)) ? null : { 0: things[0], 1: things[1], 2: things[2], 3: things[3], 4: things[4]}
+  ).then(function () {
       document.getElementById('saveButton').innerHTML = 'Saved';
+      updateDatePicker()
     });;
 }
 
