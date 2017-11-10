@@ -21,6 +21,20 @@ textarea {
   font-size: 32;
 }
 
+.logo {
+  font-weight: 100;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  font-size: 40px;
+  background:none;
+  border:none;
+  display: block;
+  text-align:center;
+  position: relative;
+}
+
 .container {
   width: 80%;
   max-width: 1200px;
