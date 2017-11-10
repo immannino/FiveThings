@@ -5,6 +5,8 @@ Since January 2016 I've been summarizing my day into five points. I started by h
 
 ### Try it out [HERE](https://five--things.herokuapp.com/)!
 
+![Five Things Website](https://raw.githubusercontent.com/alisonthemonster/FiveThings/830c00aee814ec8efe2b67fc153c8223a0e455f6/static/images/Screen%20Shot%202017-11-08%20at%2010.32.56%20PM.png)
+
 
 I also wrote some js code to convert my json to pdfs that printed into physical books. Find the pdf generating code in `` /pdf`` 
 
@@ -25,10 +27,3 @@ I also wrote some js code to convert my json to pdfs that printed into physical 
 * Navigation Bar
 * Settings Page
 * Lots more templates! 
-* A redesign to the journal entry page
-
-
-
-#### Some new template designs:
-
-<img src="https://github.com/alisonthemonster/FiveThings/blob/master/static/images/YearlyColumnStyle.png" height="250" />    <img src="https://github.com/alisonthemonster/FiveThings/blob/master/static/images/FloralCoverYearly.png" height="250" />
