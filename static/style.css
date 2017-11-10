@@ -586,6 +586,10 @@ button {
   color: white;
 }
 
+.dp-written {
+  background: #e0f5f4
+}
+
 .dp-selected:hover,
 .dp-selected:focus,
 .dp-selected {
@@ -610,9 +614,6 @@ button {
   left: 50%;
 }
 
-.dp-written {
-  background: #e0f5f4
-}
 
 /* Responsive overrides */
 @media (max-width: 480px), (max-height: 480px) {

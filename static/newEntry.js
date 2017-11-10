@@ -65,19 +65,22 @@ function buildDatePicker() {
             format(date) {
               return getPrettyDate(date)
             },
+            parse(prettyDate) {
+              return getUglyDate(prettyDate)
+            },
             max: new Date(),
             dateClass(day) {
               var dayString = getDatabaseStyleDate(day)
               return writtenDays.includes(dayString+"") ? 'dp-written' : ''
+              
             }
-          });
+          })    
+
   datePicker.on('select', (_, picker) =>  {
     date = picker.state.selectedDate  
     pullInData() 
   })
 }
-
-// getToday()
 
 function pullInData() {
   var dateStyled = getDatabaseStyleDate(date)
@@ -97,7 +100,6 @@ function pullInData() {
       }
     });
     stateHasChanged();
-
   }
 }
 
@@ -233,6 +235,16 @@ function getPrettyDate(date) {
   var day = ordinal_suffix_of(date.getDate())
   var year = date.getFullYear()
   return dayOfWeek + " " + month + " " + day + ", " + year
+}
+
+function getUglyDate(prettyDate) {
+  var words = prettyDate.split(" ")
+  console.log(words)
+  var month = words[1]
+  var dayStr = words[2]
+  dayStr = dayStr.substring(0, dayStr.length-3)
+  var year = words[3]
+  return new Date(month + " " + dayStr + ", " + year)
 }
 
 //takes in a date object and converts to YY-MM-DD
