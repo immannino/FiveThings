@@ -1,0 +1,31 @@
+.container {
+    height: 100vh;
+    background: black;
+    color: white;
+}
+
+.login {
+    position: absolute;
+    text-align: center;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    letter-spacing: .09em;
+    font-family: "Cabin Condensed";
+}
+
+.title {
+    font: normal 18px/1.5 "Fira Sans", "Helvetica Neue", sans-serif;
+    font-size: 40px;
+    font-weight: 100;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+.login-buttons {
+}
+
+.google {
+    color: white;
+    background-color: #3AAFAB;
+}
