@@ -1,0 +1,14 @@
+.header {
+    color: white;
+    font: normal 18px/1.5 "Fira Sans", "Helvetica Neue", sans-serif;
+    font-weight: 100;
+    font-size: 32px;
+}
+
+.header:hover {
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}

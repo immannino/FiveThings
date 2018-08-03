@@ -1,6 +1,6 @@
 .container {
     height: 100vh;
-    background: black;
+    background: #333;
     color: white;
 }
 
@@ -23,9 +23,25 @@
 }
 
 .login-buttons {
+
+}
+
+.login-button {
+    padding: 5px;
 }
 
 .google {
     color: white;
     background-color: #3AAFAB;
+
+    font: 200 11px system-ui;
+    line-height: 28px;
+    letter-spacing: .09em;
+}
+
+.email {
+
+    font: 200 11px system-ui;
+    line-height: 28px;
+    letter-spacing: .09em;
 }

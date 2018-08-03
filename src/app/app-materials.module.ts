@@ -1,9 +1,9 @@
 import { NgModule }                           from '@angular/core';
 import { NoopAnimationsModule }                 from '@angular/platform-browser/animations';
-import { MatCommonModule, MatButtonModule, MatSidenavModule, MatListModule, MatExpansionModule, MatCardModule, MatTooltipModule } from '@angular/material';
+import { MatCommonModule, MatButtonModule, MatCardModule, MatTooltipModule, MatFormFieldModule, MatInputModule, MatDatepickerModule, MatNativeDateModule } from '@angular/material';
 
 @NgModule({
-  imports: [ NoopAnimationsModule, MatCommonModule, MatButtonModule, MatSidenavModule, MatListModule, MatExpansionModule, MatCardModule, MatTooltipModule ],
-  exports: [ NoopAnimationsModule, MatCommonModule, MatButtonModule, MatSidenavModule, MatListModule, MatExpansionModule, MatCardModule, MatTooltipModule ],
+  imports: [ NoopAnimationsModule, MatCommonModule, MatButtonModule, MatCardModule, MatTooltipModule, MatFormFieldModule, MatInputModule, MatDatepickerModule, MatNativeDateModule ],
+  exports: [ NoopAnimationsModule, MatCommonModule, MatButtonModule, MatCardModule, MatTooltipModule, MatFormFieldModule, MatInputModule, MatDatepickerModule, MatNativeDateModule ],
 })
 export class AppMaterialsModule { }

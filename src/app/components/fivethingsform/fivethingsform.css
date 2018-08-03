@@ -1,0 +1,14 @@
+.form-control {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+    text-align: center;
+}
+
+mat-form-field {
+    color: white;
+}
+
+.submit-button-group {
+    float: right;
+}

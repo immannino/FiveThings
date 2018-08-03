@@ -1,0 +1,5 @@
+<mat-form-field class="example-full-width" class="hidden">
+    <input matInput [matDatepicker]="picker" placeholder="Choose a date" [formControl]="date" >
+    <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+<div (click)="picker.open()" class="header">{{getDateText()}}</div>
