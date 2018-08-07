@@ -17,6 +17,7 @@ import { FormState } from '../shared/state/form.state';
 import { ContentService } from '../lib/service/content.service';
 import { AppRoutingModule } from './app-routes.module';
 import { CalendarComponent } from './components/calendar/calendar.component';
+import { ThingComponent } from './components/thing/thing.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CalendarComponent } from './components/calendar/calendar.component';
     LoginComponent,
     DashboardComponent,
     FivethingsFormComponent,
-    CalendarComponent
+    CalendarComponent,
+    ThingComponent
   ],
   imports: [
     BrowserModule,

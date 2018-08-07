@@ -45,3 +45,46 @@
     line-height: 28px;
     letter-spacing: .09em;
 }
+
+/** 
+Experimental css
+*/
+.container {
+    /* position: relative; */
+    background: linear-gradient(to top right, rgb(112, 240, 227), rgb(112, 163, 240), rgb(112, 240, 227));
+    /* background-image: url('http://ichef.bbci.co.uk/wwfeatures/wm/live/1280_640/images/live/p0/54/n6/p054n6rx.jpg'); */
+    height: 100%;
+    overflow: scroll;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.item {
+    /* position: absolute; */
+    margin: 5px;
+    height: 100vh;
+}
+
+.things {
+    max-height: 300px;
+    margin-top: calc(100% - 150px);
+}
+
+.rel1 {
+    left: 10px;
+}
+
+.rel2 {
+    left: 20px;
+}
+.rel3 {
+    left: 30px;
+}
+.rel4 {
+    left: 40px;
+}
+.rel5 {
+    left: 50px;
+}

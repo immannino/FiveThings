@@ -34,19 +34,18 @@ export class ContentUtils {
         "Drank a whole bottle of wine because I'm an adult and I do what I want"
     ]
 
-    getRandomPlaceholder() {
-        return this.getFiveRandomThings();
+    getRandomPlaceholder(amount: number) {
+        return this.getFiveRandomThings(amount);
     }
 
-    private getFiveRandomThings() {
+    private getFiveRandomThings(amount: number) {
         let things = [];
         let tempHolders = this.placeholders;
 
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < amount; i++) {
             let randomItem = tempHolders[Math.round(Math.random() * (this.placeholders.length - 1))];
             things.push(randomItem);
             tempHolders = tempHolders.filter(item => item !== randomItem);
-            console.log(tempHolders.length);
         }
 
         return things;

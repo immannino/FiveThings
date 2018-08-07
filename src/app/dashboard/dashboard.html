@@ -1,8 +1,15 @@
-<login></login>
 <div class="dashboard">
-    <button mat-raised-button color="accent" routerLink="/login">LOGOUT</button>
+    <!-- <button class="f6 link dim ph3 pv2 mb2 dib black bg-light-green rotating" routerLink="/login">LOGOUT</button>
     <div class="container">
         <calendar></calendar>
         <fivethingsform></fivethingsform>
+    </div> -->
+    <div class="w-10" [ngClass]="activeThing.color" style.color="black">
+        {{activeThing.name}}
+    </div>
+    <div class="scrollable" *ngIf="activeThing">
+        <div class="item w-60" *ngFor="let thing of things; let i = index" [ngClass]="thing.cssClass">
+            <thing [title]="thing.name" (thingClicked)="handleNextThing(i)"></thing>
+        </div>
     </div>
 </div>

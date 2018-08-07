@@ -24,7 +24,7 @@ export class FivethingsFormComponent {
     placeholders = [];
 
     constructor(private formBuilder: FormBuilder, private store: Store, private contentService: ContentService) {
-        this.placeholders = this.utils.getRandomPlaceholder();
+        this.placeholders = this.utils.getRandomPlaceholder(5);
 
         this.contentService.saveStateSubject.subscribe((state: SaveState) => {
             this.saveState = state;

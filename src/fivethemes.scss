@@ -21,5 +21,5 @@ $fivethings-theme: mat-light-theme($fivethings-primary, $fivethings-accent, $fiv
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-// @include angular-material-theme($fivethings-theme);
-@include mat-input-theme($fivethings-theme);
+@include angular-material-theme($fivethings-theme);
+// @include mat-input-theme($fivethings-theme);
