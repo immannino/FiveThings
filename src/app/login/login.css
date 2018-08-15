@@ -1,6 +1,6 @@
 .container {
     height: 100vh;
-    background: #333;
+    background: rgba(0, 0, 0, 0.9);
     color: white;
 }
 
@@ -20,10 +20,6 @@
     font-weight: 100;
     text-transform: uppercase;
     margin-bottom: 25px;
-}
-
-.login-buttons {
-
 }
 
 .login-button {

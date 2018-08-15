@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { ContentService } from '../../lib/service/content.service';
 
 @Component({
   selector: 'dashboard',
@@ -7,5 +8,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./dashboard.css']
 })
 export class DashboardComponent {
-  constructor(private router: Router){}
+  isLoggedIn: boolean = false;
+
+  constructor(private router: Router, private contentService: ContentService){
+    this.contentService.loginStateSubject.subscribe((state) => {
+      this.isLoggedIn = state;
+    });
+  }
+
+  handleLogout(status: boolean) {
+    this.contentService.toggleLoginState(status);
+  }
 }
