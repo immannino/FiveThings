@@ -18,6 +18,7 @@ import { ContentService } from '../lib/service/content.service';
 import { AppRoutingModule } from './app-routes.module';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { ThingComponent } from './components/thing/thing.component';
+import { ScrollDirective } from '../lib/utils/scroll.directive';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ThingComponent } from './components/thing/thing.component';
     DashboardComponent,
     FivethingsFormComponent,
     CalendarComponent,
-    ThingComponent
+    ThingComponent,
+    ScrollDirective
   ],
   imports: [
     BrowserModule,

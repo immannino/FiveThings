@@ -1,9 +1,9 @@
 <div class="container w-100 h-100">
     <span class="pa4 tff">{{title}}</span>
-    <form [formGroup]="fiveThingsForm" novalidate ngxsForm="form.entryForm" (ngSubmit)="onSubmit()" class="w-100 pa2 form-control">
+    <form [formGroup]="formData" novalidate ngxsForm="form.entryForm" (ngSubmit)="onSubmit()" class="w-100 pa2 form-control" *ngIf="placeholder">
         <mat-form-field appearance="outline" class="w-100 form-field">
             <mat-label>{{title}}</mat-label>
-            <textarea matInput [placeholder]="placeholder" formControlName="thingtext"></textarea>
+            <textarea matInput [placeholder]="placeholder" formControlName="formData"></textarea>
         </mat-form-field>
     </form>
     <div class="centered bff">

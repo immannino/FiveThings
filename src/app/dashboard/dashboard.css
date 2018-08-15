@@ -43,60 +43,49 @@
 .dashboard {
   position: relative;
   background: linear-gradient(to top right, rgb(112, 240, 227), rgb(112, 163, 240), rgb(112, 163, 240), rgb(112, 240, 227));
-  /* background-image: url('http://ichef.bbci.co.uk/wwfeatures/wm/live/1280_640/images/live/p0/54/n6/p054n6rx.jpg'); */
   height: 100vh;
-  overflow: hidden;
+  /* overflow: hidden; */
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
+.scrollable {
+  overflow: hidden;
+}
+
 .item {
   position: absolute;
+  box-shadow: 7px 7px white;
 }
 
 .t-light-red {
   background-color: #FF725C;
 }
 
-.red-props {
-  transform: translate(250px, 78vh);
-  z-index: 0;
-}
-
 .t-light-blue {
   background-color: #96CCFF;
-}
-
-.blue-props {
-  z-index: 1;
-  transform: translate(200px, 81vh);
 }
 
 .t-light-yellow {
   background-color: #FBF1A9;
 }
-
-.yellow-props {
-  z-index: 2;
-  transform: translate(150px, 84vh);
-}
-
 .t-light-green {
   background-color: #9EEBCF;
-}
-
-.green-props {
-  z-index: 3;
-  transform: translate(100px, 87vh);
 }
 
 .t-light-pink {
   background-color: #FFA3D7;
 }
 
-.pink-props {
-  z-index: 4;
-  transform: translate(50px, 91vh);
+.title {
+  position: absolute;
+  /* font-size: 32px; */
+  top: 100px;
+  transform: rotate(90deg);
+  font: normal 18px/1.5 "Fira Sans", "Helvetica Neue", sans-serif;
+  font-size: 24px;
+  font-weight: 100;
+  text-transform: uppercase;
 }

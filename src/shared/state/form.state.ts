@@ -2,7 +2,7 @@ import { State, Action, StateContext, Selector } from '@ngxs/store';
 
 export class SetFormData {
     static readonly type = '[Form] Set FormData';
-    constructor(public authData: any) {}
+    constructor(public formData: any) {}
 }
 
 @State({
@@ -17,10 +17,13 @@ export class SetFormData {
   }
 })
 export class FormState {
-  @Selector() static _toggleDrinks(state: any) {
-    return state.toggleDrinks;
-  }
-
   @Action(SetFormData)
-  setFormData(ctx: StateContext<any>, action: SetFormData) {}
+  setFormData(ctx: StateContext<any>, action: SetFormData) {
+    const localState = ctx.getState();
+
+    ctx.patchState({
+      ...localState,
+      formData: action.formData
+    });
+  }
 }
