@@ -1,7 +1,9 @@
 <div class="dashboard">
     <login *ngIf="!isLoggedIn" class="item" id="login"></login>
-    <div class="item five-things" id="fivethings">
-        <button mat-raised-button color="accent" (click)="handleLogout(false)">LOGOUT</button>
+    <div class="item" id="fivethings">
+        <div class="pa2">
+            <button mat-raised-button color="primary" (click)="handleLogout(false)">LOGOUT</button>
+        </div>
         <div class="container">
             <calendar></calendar>
             <fivethingsform></fivethingsform>

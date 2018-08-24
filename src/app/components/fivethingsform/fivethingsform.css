@@ -6,9 +6,11 @@
 }
 
 mat-form-field {
-    color: white;
+    color: black;
 }
 
 .submit-button-group {
     float: right;
 }
+
+/*  */

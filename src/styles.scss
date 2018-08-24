@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+/* @import '~@angular/material/prebuilt-themes/purple-green.css'; */
+
+@import '~@angular/material/theming';
+
+// always include only once per project
+@include mat-core();
+
+// import our custom theme
+@import 'fivethemes.scss';
+
+// specify theme class eg: <body class="my-theme"> ... </body>
+.fivethings-theme {
+  
+  // use our theme with angular-material-theme mixin
+  @include angular-material-theme($fivethings-theme);
+}
+
+body {
+    --main-teal: #3AAFAB;
+    --main-grey: #333;
+}
+
+.main-teal {
+    color: #3AAFAB;
+}
+.bg-main-teal {
+    background-color: #3AAFAB;
+}
+
+.grey { 
+    color: #333;
+}
+
+.bg-grey {
+    background-color: #333;
+}

@@ -17,6 +17,7 @@ import { FormState } from '../shared/state/form.state';
 import { ContentService } from '../lib/service/content.service';
 import { AppRoutingModule } from './app-routes.module';
 import { CalendarComponent } from './components/calendar/calendar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { CalendarComponent } from './components/calendar/calendar.component';
     ReactiveFormsModule,
     NgxsModule.forRoot([AuthState, FivethingsState, FormState]),
     NgxsFormPluginModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [ FiveThingsService, AuthenticationService, ContentService ],
   bootstrap: [AppComponent]
