@@ -1,12 +1,62 @@
 <div class="container w-100 h-100">
-    <span class="pa4 tff">{{title}}</span>
-    <form [formGroup]="formData" novalidate ngxsForm="form.entryForm" (ngSubmit)="onSubmit()" class="w-100 pa2 form-control" *ngIf="placeholder">
-        <mat-form-field appearance="outline" class="w-100 form-field">
-            <mat-label>{{title}}</mat-label>
-            <textarea matInput [placeholder]="placeholder" formControlName="formData"></textarea>
-        </mat-form-field>
+    <form [formGroup]="formData" novalidate (ngSubmit)="onSubmit()" class="w-100 pa2 form-control" *ngIf="state">
+        <mat-accordion displayMode="default">
+            <mat-expansion-panel id="one" expanded="true">
+                <mat-expansion-panel-header>
+                    ONE
+                </mat-expansion-panel-header>
+                <mat-form-field appearance="outline" class="w-100 form-field pt3">
+                    <!-- <mat-label>ONE</mat-label> -->
+                    <textarea matInput [placeholder]="placeholder[0]" formControlName="thing1"></textarea>
+                </mat-form-field>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel id="two">
+                <mat-expansion-panel-header>
+                    TWO
+                </mat-expansion-panel-header>
+
+                <mat-form-field appearance="outline" class="w-100 form-field pt3">
+                    <textarea matInput [placeholder]="placeholder[1]" formControlName="thing2"></textarea>
+                </mat-form-field>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel id="three">
+                    <mat-expansion-panel-header>
+                        THREE
+                    </mat-expansion-panel-header>
+
+                <mat-form-field appearance="outline" class="w-100 form-field pt3">
+                    <!-- <mat-label>THREE</mat-label> -->
+                    <textarea matInput [placeholder]="placeholder[2]" formControlName="thing3"></textarea>
+                </mat-form-field>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel id="four">
+                    <mat-expansion-panel-header>
+                        FOUR
+                    </mat-expansion-panel-header>
+
+                <mat-form-field appearance="outline" class="w-100 form-field pt3">
+                    <!-- <mat-label>FOUR</mat-label> -->
+                    <textarea matInput [placeholder]="placeholder[3]" formControlName="thing4"></textarea>
+                </mat-form-field>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel id="five">
+                    <mat-expansion-panel-header>
+                        FIVE
+                    </mat-expansion-panel-header>
+
+                <mat-form-field appearance="outline" class="w-100 form-field pt3">
+                    <!-- <mat-label>FIVE</mat-label> -->
+                    <textarea matInput [placeholder]="placeholder[4]" formControlName="thing5"></textarea>
+                </mat-form-field>
+            </mat-expansion-panel>
+        </mat-accordion>
+
+        <div class="centered bff mt3">
+            <button mat-raised-button type="submit" class="">{{state.saveStatus}}</button>
+        </div>
     </form>
-    <div class="centered bff">
-        <button (click)="triggerEvent()" class="f6 link dim ba b--dashed bw1 ph3 pv2 mb2 dib purple bg-light-green">Next thing</button>
-    </div>
 </div>

@@ -17,3 +17,52 @@
     line-height: 28px;
     letter-spacing: .09em;
 }
+
+/*
+light-yellow: #FBF1A9
+light-green: #9EEBCF
+light-salmon: #FF725C
+light-blue: #96CCFF
+light-purple: #A463F2
+light-pink: #FFA3D7
+
+OG light: 
+OG lighter: 
+
+
+*/
+
+#one .mat-expansion-panel-header,
+#one .mat-expansion-panel-header:hover {
+    color: black;
+    /* background: #b0dfdd; */
+    background: #96CCFF;
+}
+
+#two .mat-expansion-panel-header,
+#two .mat-expansion-panel-header:hover {
+    color: black;
+    /* background: #d7efee; */
+    background: #9EEBCF;
+}
+
+#three .mat-expansion-panel-header,
+#three .mat-expansion-panel-header:hover {
+    color: black;
+    /* background: #b0dfdd; */
+    background: #FF725C;
+}
+
+#four .mat-expansion-panel-header,
+#four .mat-expansion-panel-header:hover {
+    color: black;
+    /* background: #d7efee; */
+    background: #FBF1A9;
+}
+
+#five .mat-expansion-panel-header,
+#five .mat-expansion-panel-header:hover {
+    color: black;
+    /* background: #b0dfdd; */
+    background: #FFA3D7;
+}

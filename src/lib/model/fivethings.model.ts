@@ -15,19 +15,16 @@ export enum Status {
     FAILURE
 }
 
-/**
- * Most likely state module classes.
- *  Props (
- *      Token: string,
- *      Login Credentials: {
- *          email: string,
- *          password: string
- *      },
- * 
- * 
- * ) 
- *
- */
 export class Token {
     token: string;
+}
+
+export class FiveThingsState {
+    thing1: Thing;
+    thing2: Thing;
+    thing3: Thing;
+    thing4: Thing;
+    thing5: Thing;
+    saveStatus: string;
+    date: Date;
 }

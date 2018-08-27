@@ -2,24 +2,30 @@
 @import '~@angular/material/prebuilt-themes/purple-green.css';
 
 body {
-    /* background: #333; */
-    /* cursor: url('./assets/Banana.svg') 4 12, auto; */
-    /* cursor: url('./assets/giphy.webp') 4 12, auto; */
-    /* background: url('./assets/giphy.webp'); */
 }
-/*egg*/
-/* body {	
-	cursor:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAACVBMVEX///8AAAD///9+749PAAAAAXRSTlMAQObYZgAAAEdJREFUeAF90FEKgDAMwFDT+x9awYCRwjL282CM9joFsGie/swYy6oiENW8RaJ5PBvxvCpqxfwetTOqeyo+Rgx3JjnrCxNa3TwuAY6NyoMhAAAAAElFTkSuQmCC),auto;	
-} */
-/* cactus */
+
 body {
-    /* background: linear-gradient(to top right, rgb(112, 240, 227), rgb(112, 163, 240), rgb(112, 240, 227)); */
-    /* background-image: url('http://ichef.bbci.co.uk/wwfeatures/wm/live/1280_640/images/live/p0/54/n6/p054n6rx.jpg'); */
-    /* height: 100%; */
-    /* overflow: scroll; */
-    /* background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; */
 	cursor:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAaCAMAAABigZc2AAAACVBMVEX///8AAAD///9+749PAAAAAXRSTlMAQObYZgAAAFpJREFUeNp9jUEOwEAIAhn+/+imjbs1bC0XzQioSUAAYZs0mcVY051RbGXfFsyxibTVHXhuhXYlbuRGPbe7kz3g0wf679OuizDBdCaberLE4AsjGliD02eNugA+MQFAPqynHQAAAABJRU5ErkJggg==),auto;
+}
+
+.bg-gradient {
+    background-color: linear-gradient(to top right, rgb(112, 240, 227), rgb(112, 163, 240), rgb(112, 163, 240), rgb(112, 240, 227));
+}
+
+.bg-subtle {
+    background: linear-gradient(to top left, rgb(189, 233, 231), rgb(216, 246, 245), white);
+}
+
+.font-bench {
+    font-family: 'BenchNine', sans-serif;
+}
+
+.font-fira {
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.shadow { box-shadow: 5px 5px black }
+
+.bg-five-green {
+    background: #9cd7d5;
 }

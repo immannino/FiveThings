@@ -1,15 +1,18 @@
-<div class="dashboard" id="dashboard" scrollable (window:scroll)="onWindowScroll($event)">
-    <!-- <button class="f6 link dim ph3 pv2 mb2 dib black bg-light-green rotating" routerLink="/login">LOGOUT</button>
-    <div class="container">
-        <calendar></calendar>
-        <fivethingsform></fivethingsform>
-    </div> -->
-    <div class="w-10 title" [ngClass]="activeThing.color" style.color="#FFFFFF">
-        {{activeThing.name}}
-    </div>
-    <div class="scrollable" *ngIf="activeThing">
-        <div class="item w-60" *ngFor="let thing of things; let i = index" [ngClass]="thing.cssClass" [style.top]="thing.top" [style.left]="thing.left">
-            <thing [title]="thing.name" (thingClicked)="handleNextThing(i)"></thing>
-        </div>
+<div class="font-fira">
+    <nav class="dt w-100 flex justify-around pa1 ph5-ns bg-five-green">
+        <p class="dib v-mid">
+            <a class="f6 link dim br2 ph3 pv2 dib black bg-white pointer" (click)="logout()">MENU</a>
+        </p>
+        <p class="f3 dib v-mid white">
+            Five Things
+        </p>
+        <p class="dib v-mid">
+            <a class="f6 link dim br2 ph3 pv2 dib black bg-white pointer" (click)="logout()">LOGOUT</a>
+        </p>
+    </nav>
+
+    <div class="dashboard" id="dashboard" class="mt5">
+        <calendar class="tc pointer"></calendar>
+        <thing title="stuff" (data)="collectData(data)"></thing>
     </div>
 </div>

@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ContentService } from '../../../lib/service/content.service';
+import { StateService } from '../../../lib/service/state.service';
+import { FiveThingsState } from '../../../lib/model/fivethings.model';
 
 @Component({
   selector: 'calendar',
@@ -20,10 +22,17 @@ export class CalendarComponent {
         "Saturday"
     ];
 
-    constructor(private contentService: ContentService) {
-        this.contentService.dateStateSubject.subscribe((state) => {
-            this.date.setValue(state);
+    constructor(private stateService: StateService) {
+        this.stateService.stateSubject.subscribe((state) => {
+            this.date.setValue(state.date);
         });
+    }
+
+    updateDate() {
+        let state = this.stateService.getState();
+
+        state.date = this.date.value;
+        this.stateService.updateState(state);
     }
 
     getDateText() {
