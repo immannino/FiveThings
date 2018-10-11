@@ -29,3 +29,42 @@ body {
 .bg-five-green {
     background: #9cd7d5;
 }
+
+/* Night Man */
+/* <color name="text_box_color">#484747</color>
+<color name="text_box_color_enabled">#3e3e3e</color>
+
+<color name="search_result_background">#282828</color>
+
+<color name="primary_text_color">#ffffff</color>
+<color name="secondary_text_color">#969696</color>
+
+<color name="toolbar_color">#282828</color>
+
+<color name="background_color">#333333</color> */
+
+/* Day Man*/
+/*
+<resources>
+    <color name="grey">#333333</color>
+    <color name="darker_grey">#282828</color>
+    <color name="another_grey">#9b282828</color>
+    <color name="lighter_grey">#484747</color>
+    <color name="bluegreen">#3AAFAB</color>
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="disabled_white">#969696</color>
+
+    <color name="text_box_color">#ededed</color>
+    <color name="text_box_color_enabled">#dadada</color>
+    <color name="search_result_background">#983aafab</color>
+    <color name="search_hint_color">#eaeaea</color>
+
+    <color name="primary_text_color">#000000</color>
+    <color name="secondary_text_color">#878787</color>
+
+    <color name="toolbar_color">#efefef</color>
+    <color name="background_color">#ffffff</color>
+
+</resources>
+*/
