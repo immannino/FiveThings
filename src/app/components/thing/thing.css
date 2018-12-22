@@ -35,34 +35,34 @@ OG lighter:
 #one .mat-expansion-panel-header,
 #one .mat-expansion-panel-header:hover {
     color: black;
-    /* background: #b0dfdd; */
-    background: #96CCFF;
+    background: #9cd7d5;
+    /* background: #96CCFF; */
 }
 
 #two .mat-expansion-panel-header,
 #two .mat-expansion-panel-header:hover {
     color: black;
     /* background: #d7efee; */
-    background: #9EEBCF;
+    background: #9cd7d5;
 }
 
 #three .mat-expansion-panel-header,
 #three .mat-expansion-panel-header:hover {
     color: black;
-    /* background: #b0dfdd; */
-    background: #FF725C;
+    background: #9cd7d5;
+    /* background: #FF725C; */
 }
 
 #four .mat-expansion-panel-header,
 #four .mat-expansion-panel-header:hover {
     color: black;
-    /* background: #d7efee; */
-    background: #FBF1A9;
+    background: #9cd7d5;
+    /* background: #FBF1A9; */
 }
 
 #five .mat-expansion-panel-header,
 #five .mat-expansion-panel-header:hover {
     color: black;
-    /* background: #b0dfdd; */
-    background: #FFA3D7;
+    background: #9cd7d5;
+    /* background: #FFA3D7; */
 }

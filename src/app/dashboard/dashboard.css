@@ -1,0 +1,12 @@
+@media (max-width: 599px) {   
+    .flex-orientation {
+        flex-direction: column;
+    }
+}
+@media (min-width: 600px) {   
+    .flex-orientation {
+        width: 100%;
+        float: left;
+        flex-direction: column-reverse;
+    }   
+}

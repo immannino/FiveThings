@@ -1,18 +1,25 @@
-<div class="font-fira">
-    <nav class="dt w-100 flex justify-around pa1 ph5-ns bg-five-green">
-        <p class="dib v-mid">
-            <a class="f6 link dim br2 ph3 pv2 dib black bg-white pointer" (click)="logout()">MENU</a>
-        </p>
+<div class="font-fira vh-100 ">
+    <nav class="dt w-100 flex justify-around pa1 ph5-ns bg-five-green pointer" routerLink="/login">
         <p class="f3 dib v-mid white">
             Five Things
         </p>
-        <p class="dib v-mid">
-            <a class="f6 link dim br2 ph3 pv2 dib black bg-white pointer" (click)="logout()">LOGOUT</a>
-        </p>
     </nav>
-
-    <div class="dashboard" id="dashboard" class="mt5">
-        <calendar class="tc pointer"></calendar>
-        <thing title="stuff" (data)="collectData(data)"></thing>
+    <div class="flex flex-orientation">
+        <router-outlet></router-outlet>
+        <nav class="dt w-100 flex justify-around bg-five-green">
+            <p class="dib v-mid">
+                <a class="f6 link dim br2 ph3 pv2 dib black bg-white pointer" routerLink="/dashboard/fivethings">Five
+                    Things</a>
+            </p>
+            <p class="dib v-mid">
+                <a class="f6 link dim br2 ph3 pv2 dib black bg-white pointer" routerLink="/dashboard/search">Search</a>
+            </p>
+            <p class="dib v-mid">
+                <a class="f6 link dim br2 ph3 pv2 dib black bg-white pointer" routerLink="/dashboard/analytics">Analytics</a>
+            </p>
+            <p class="dib v-mid">
+                <a class="f6 link dim br2 ph3 pv2 dib black bg-white pointer" routerLink="/dashboard/settings">Settings</a>
+            </p>
+        </nav>
     </div>
 </div>

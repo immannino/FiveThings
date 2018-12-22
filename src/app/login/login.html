@@ -1,13 +1,11 @@
-<div class="container tc vh-100 pa4">
-    <div class="pa4 w-50 ml-auto mr-auto black bg-white shadow f2 font-bench tracked-mega mv5 ">
+<div class="container tc h-100 pa4">
+    <div class="pa4 w-50 center bg-white f2 font-bench mv5 ">
         <a class="f2" title="Home">Five Things</a>  
     </div>
-    <div class="carousel">
-
-    </div>
+    <carousel id="carousel" [items]="carouselItems"></carousel>
     <div class="ma4 font-fira">
         <div class="ma2 pa3">
-            <button mat-raised-button class="bg-light-blue" routerLink="/dashboard">Sign in with Google</button>
+            <button mat-raised-button class="bg-light-blue" routerLink="/dashboard/fivethings">Sign in with Google</button>
         </div>
     </div>
 </div>

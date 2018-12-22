@@ -13,6 +13,12 @@ import { AppRoutingModule } from './app-routes.module';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { ThingComponent } from './components/thing/thing.component';
 import { StateService } from '../lib/service/state.service';
+import { SearchComponent } from './pages/search/search.component';
+import { SettingsComponent } from './pages/settings/settings.component';
+import { AnalyticsComponent } from './pages/analytics/analytics.component';
+import { FivethingsComponent } from './pages/fivethings/fivethings.component';
+import { CarouselItem } from 'src/lib/model/carousel.model';
+import { CarouselComponent } from './components/carousel/carousel.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +26,12 @@ import { StateService } from '../lib/service/state.service';
     LoginComponent,
     DashboardComponent,
     CalendarComponent,
-    ThingComponent
+    ThingComponent,
+    SearchComponent,
+    SettingsComponent,
+    AnalyticsComponent,
+    FivethingsComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,10 @@
+<div class="vw-100 overflow-x-hidden ">
+    <div id="content" *ngIf="items" class="container rotate">
+        <div *ngFor="let item of items; let i = index;" class="flex flex-column ">
+            <div>
+                <img alt="" class="h-75 w-75 " [src]="item.path">
+            </div>
+            <label class="pa3 f3">{{item.description}}</label>
+        </div>
+    </div>
+</div>

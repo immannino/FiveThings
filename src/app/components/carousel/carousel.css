@@ -1,0 +1,24 @@
+.container {
+  display: grid;
+  grid-template-columns: 100% 100% 100%;
+  grid-template-rows: 1;
+}
+
+.rotate {
+  animation: rotate 15s ease-out infinite;
+}
+
+@keyframes rotate {
+  33% {
+      transform: translateX(0%);
+  }
+  66% {
+      transform: translateX(-100%);
+  }
+  99% {
+      transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
